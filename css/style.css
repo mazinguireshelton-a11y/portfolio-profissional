@@ -112,7 +112,7 @@ body {
     font-size: var(--font-size-sm);
 }
 
-/* ===== LANGUAGE SELECTOR - CORRIGIDO PARA MOBILE ===== */
+/* ===== LANGUAGE SELECTOR - VERSÃO CORRIGIDA ===== */
 .language-selector {
     position: relative;
     margin-right: var(--space-md);
@@ -156,7 +156,7 @@ body {
     border: 1px solid var(--gray-light);
 }
 
-.lang-dropdown.show {
+.lang-dropdown.active {
     display: block;
     animation: fadeIn 0.3s ease;
 }
@@ -958,60 +958,23 @@ body {
 }
 
 /* ===== SISTEMA DE TRADUÇÃO - ESTILOS CORRIGIDOS ===== */
-.language-changing {
-    pointer-events: none;
-}
-
-.language-changing *[data-key] {
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-.language-loading::before {
-    content: '';
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    border: 3px solid #f3f3f3;
-    border-top: 3px solid var(--primary);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-    z-index: 9999;
-}
-
 [data-key] {
     transition: opacity 0.3s ease, transform 0.3s ease;
     word-wrap: break-word;
     overflow-wrap: break-word;
-}
-
-.lang-btn {
-    transition: var(--transition);
-}
-
-.lang-btn:hover {
-    transform: scale(1.05);
-}
-
-.translating {
-    opacity: 0.7;
-    filter: blur(1px);
-    transition: var(--transition);
-}
-
-/* ===== ESTILOS ESPECÍFICOS PARA TRADUÇÃO MOBILE ===== */
-.mobile-translation-fix {
-    /* Garante que os textos traduzidos se ajustem bem no mobile */
-}
-
-[data-key] {
-    /* Garante que textos longos em outros idiomas quebrem corretamente */
     hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
+}
+
+.language-changing [data-key] {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.translating [data-key] {
+    opacity: 0.5;
+    transition: var(--transition);
 }
 
 /* ===== MEDIA QUERIES ===== */
@@ -1147,7 +1110,7 @@ body {
     }
 }
 
-/* ===== MOBILE SPECIFIC STYLES - CORRIGIDOS ===== */
+/* ===== MOBILE SPECIFIC STYLES ===== */
 @media (max-width: 767px) {
     .language-selector {
         margin-right: 0;
@@ -1158,6 +1121,7 @@ body {
     .lang-dropdown {
         right: 0;
         left: auto;
+        min-width: 130px;
     }
     
     .nav-container {
@@ -1173,7 +1137,6 @@ body {
         order: 3;
     }
     
-    /* Correção para dropdown de idiomas quando menu mobile está aberto */
     .nav-links.active ~ .language-selector .lang-dropdown {
         position: fixed;
         top: 60px;
@@ -1181,7 +1144,6 @@ body {
         z-index: 1001;
     }
     
-    /* Melhorias para textos traduzidos no mobile */
     [data-key] {
         font-size: 0.9rem;
         line-height: 1.4;
@@ -1198,32 +1160,6 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .language-selector {
-        margin-right: 0;
-        margin-left: auto;
-    }
-    
-    .lang-dropdown {
-        right: 0;
-        left: auto;
-        min-width: 130px;
-    }
-    
-    /* Garantir que todos os elementos traduzidos sejam legíveis */
-    [data-key] {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-    }
-    
-    .lang-btn {
-        white-space: nowrap;
-        font-size: 0.8rem;
-        padding: 8px 12px;
-    }
-}
-
 /* ===== ACESSIBILIDADE ===== */
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
@@ -1233,7 +1169,6 @@ body {
     }
 }
 
-/* Foco visível para acessibilidade */
 button:focus-visible,
 a:focus-visible,
 .lang-btn:focus-visible,
@@ -1272,103 +1207,11 @@ a:focus-visible,
     /* Manter o tema claro como padrão, mas adicionar suporte futuro */
 }
 
-/* ===== GARANTIR QUE IMAGENS DA GALERIA MANTENHAM PROPORÇÕES ===== */
+/* ===== GARANTIR QUE IMAGENS MANTENHAM PROPORÇÕES ===== */
 .gallery-item img,
 .photo-card img,
 .profile-img {
     width: 100%;
     height: auto;
     object-fit: cover;
-}
-
-/* ===== CORREÇÕES ESPECÍFICAS PARA CONTEÚDO TRADUZIDO ===== */
-.translated-content {
-    /* Garante que o conteúdo traduzido se ajuste bem */
-    line-height: 1.5;
-}
-
-/* Textos longos em idiomas como alemão ou finlandês */
-.long-text-fix {
-    word-break: break-word;
-    hyphens: auto;
-}
-
-/* ===== CORREÇÕES URGENTES PARA TRADUÇÃO MOBILE ===== */
-@media (max-width: 768px) {
-    .language-selector {
-        position: relative;
-        z-index: 1001;
-    }
-    
-    .lang-dropdown {
-        position: fixed !important;
-        top: 60px !important;
-        right: 10px !important;
-        left: auto !important;
-        z-index: 1002 !important;
-    }
-    
-    /* Garantir que o menu mobile não sobreponha o seletor */
-    .nav-links.active {
-        z-index: 999;
-    }
-    
-    /* Melhorar textos traduzidos */
-    [data-key] {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-        line-height: 1.4;
-    }
-}
-
-/* Indicador visual de mudança de idioma */
-.language-changing [data-key] {
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-/* Garantir que dropdown fique acima de tudo */
-.lang-dropdown {
-    z-index: 1002;
-}
-
-/* ===== CORREÇÕES URGENTES PARA TRADUÇÃO MOBILE ===== */
-@media (max-width: 768px) {
-    .language-selector {
-        position: relative;
-        z-index: 1001;
-    }
-    
-    .lang-dropdown {
-        position: fixed !important;
-        top: 60px !important;
-        right: 10px !important;
-        left: auto !important;
-        z-index: 1002 !important;
-    }
-    
-    /* Garantir que o menu mobile não sobreponha o seletor */
-    .nav-links.active {
-        z-index: 999;
-    }
-    
-    /* Melhorar textos traduzidos */
-    [data-key] {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-        line-height: 1.4;
-    }
-}
-
-/* Indicador visual de mudança de idioma */
-.language-changing [data-key] {
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-/* Garantir que dropdown fique acima de tudo */
-.lang-dropdown {
-    z-index: 1002;
 }

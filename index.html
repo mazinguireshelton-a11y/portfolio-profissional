@@ -1,45 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<!-- Meta tags para forçar tradução -->
-<meta name="google" content="translate">
-<meta name="description" content="Portfólio Shelton Manuel - Estudante, Programador, Líder, Atleta - Site em Português">
-<meta name="keywords" content="portfólio, programador, estudante, Moçambique, tecnologia">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelton Manuel | Engenharia & Tecnologia</title>
+    
+    <!-- Meta Tags Essenciais -->
+    <meta name="google" content="translate">
+    <meta name="description" content="Shelton Manuel - Estudante, Programador Junior, Líder em Moçambique. Portfólio em múltiplos idiomas.">
+    <meta name="keywords" content="Shelton Manuel, portfólio, programador, Moçambique, estudante, engenharia, tecnologia">
+    <meta name="author" content="Shelton Mazinguire Manuel">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Shelton Manuel | Engenharia & Tecnologia">
+    <meta property="og:description" content="Estudante | Programador Junior | Líder - Moçambique">
+    <meta property="og:type" content="website">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- ==================== NAVIGATION ==================== -->
     <nav class="navbar">
         <div class="nav-container">
+            <!-- Logo -->
             <div class="logo">
                 <span>SM</span>
             </div>
             
-            <!-- Seletor de Idiomas -->
+            <!-- Language Selector CORRETO -->
             <div class="language-selector">
-                <button class="lang-btn" data-lang="pt">🇵🇹 PT</button>
+                <button class="lang-btn" id="universalLangBtn">
+                    <span class="flag">🇵🇹</span>
+                    <span class="lang-code">PT</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                
                 <div class="lang-dropdown">
-                    <button class="lang-option" data-lang="en">🇺🇸 EN</button>
-                    <button class="lang-option" data-lang="es">🇪🇸 ES</button>
-                    <button class="lang-option" data-lang="ru">🇷🇺 RU</button>
-                    <button class="lang-option" data-lang="zh">🇨🇳 中文</button>
+                    <!-- ⚠️ IMPORTANTE: Mudado de data-language para data-lang -->
+                    <button class="lang-option" data-lang="pt">
+                        <span class="flag">🇵🇹</span>
+                        <span class="lang-name">Português</span>
+                    </button>
+                    
+                    <button class="lang-option" data-lang="en">
+                        <span class="flag">🇺🇸</span>
+                        <span class="lang-name">English</span>
+                    </button>
+                    
+                    <button class="lang-option" data-lang="es">
+                        <span class="flag">🇪🇸</span>
+                        <span class="lang-name">Español</span>
+                    </button>
+                    
+                    <button class="lang-option" data-lang="fr">
+                        <span class="flag">🇫🇷</span>
+                        <span class="lang-name">Français</span>
+                    </button>
+                    
+                    <button class="lang-option" data-lang="ru">
+                        <span class="flag">🇷🇺</span>
+                        <span class="lang-name">Русский</span>
+                    </button>
+                    
+                    <button class="lang-option" data-lang="zh">
+                        <span class="flag">🇨🇳</span>
+                        <span class="lang-name">中文</span>
+                    </button>
                 </div>
             </div>
             
+            <!-- Navigation Links -->
             <ul class="nav-links">
                 <li><a href="#sobre" data-key="nav.about">Sobre Mim</a></li>
                 <li><a href="#lideranca" data-key="nav.leadership">Liderança</a></li>
                 <li><a href="#programacao" data-key="nav.programming">Programação</a></li>
                 <li><a href="#cursos" data-key="nav.courses">Cursos</a></li>
-                <li><a href="#esportes" data-key="nav.sports">Esportes</a></li>
             </ul>
             
-            <div class="hamburger">
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger" aria-label="Abrir menu" role="button" tabindex="0">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -47,43 +89,50 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
+    <!-- ==================== HERO SECTION ==================== -->
+    <header class="hero" id="inicio">
         <div class="hero-content">
             <div class="profile-card">
-                <img src="assets/images/perfil/foto-perfil.jpg" alt="Shelton Manuel" class="profile-img">
+                <img src="assets/images/perfil/foto-perfil.jpg" 
+                     alt="Shelton Manuel - Foto de perfil" 
+                     class="profile-img"
+                     loading="eager">
                 <h1 data-key="hero.title">Shelton Mazinguire Manuel</h1>
-                <p class="tagline" data-key="hero.tagline">Estudante | Programador junior | Líder | Atleta</p>
+                <p class="tagline" data-key="hero.tagline">Estudante | Programador Junior | Líder</p>
+                
                 <div class="contact-info">
-                    <a href="mailto:shelton.mazinguire@yandex.com">
-                        <i class="fas fa-envelope"></i>
+                    <a href="mailto:shelton.mazinguire@yandex.com" aria-label="Enviar email para shelton.mazinguire@yandex.com">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
                         shelton.mazinguire@yandex.com
                     </a>
-                         <a href="mailto:mazinguireshelton@gmail.com">
-                            <i class="fas fa-envelope"></i>
-                               mazinguireshelton@gmail.com
-                      </a>
-                    <a href="tel:+258875962589">
-                        <i class="fas fa-phone"></i>
+                    <a href="mailto:mazinguireshelton@gmail.com" aria-label="Enviar email para mazinguireshelton@gmail.com">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        mazinguireshelton@gmail.com
+                    </a>
+                    <a href="tel:+258875962589" aria-label="Ligar para +258 875962589">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
                         +258 875962589
                     </a>
                     <span>
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
                         Chimoio, Moçambique
                     </span>
                 </div>
             </div>
         </div>
-        <div class="scroll-down">
-            <i class="fas fa-chevron-down"></i>
+        
+        <div class="scroll-down" aria-label="Rolar para baixo">
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
         </div>
     </header>
 
-    <!-- Sobre Mim Section -->
-    <section id="sobre" class="section">
+    <!-- ==================== SOBRE MIM ==================== -->
+    <section id="sobre" class="section" aria-labelledby="sobre-title">
         <div class="container">
-            <h2 class="section-title">Sobre Mim</h2>
+            <h2 class="section-title" id="sobre-title">Sobre Mim</h2>
+            
             <div class="sobre-content">
+                <!-- Coluna Esquerda: Texto -->
                 <div class="sobre-text">
                     <div class="intro-card">
                         <h3 data-key="about.journey">🔄 Minha Jornada</h3>
@@ -95,7 +144,7 @@
                         <div class="education-item">
                             <h4 data-key="about.school">Escola Secundária Samora Machel</h4>
                             <span class="year" data-key="about.year">2024 - 2025</span>
-                            <p data-key="about.grade">12º Ano - Ciências com biológia</p>
+                            <p data-key="about.grade">12º Ano - Ciências com Biologia</p>
                             <ul>
                                 <li data-key="about.subject1">Matemática</li>
                                 <li data-key="about.subject2">Física e Química</li>
@@ -108,41 +157,38 @@
                         <h3 data-key="about.skills">🛠️ Competências</h3>
                         <div class="skills-grid">
                             <div class="skill-item">
-                                <i class="fas fa-code"></i>
+                                <i class="fas fa-code" aria-hidden="true"></i>
                                 <span>Programação</span>
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-users"></i>
+                                <i class="fas fa-users" aria-hidden="true"></i>
                                 <span>Liderança</span>
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-basketball-ball"></i>
-                                <span>Handebol</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-language"></i>
-                                <span>Português/Inglês</span>
-                            </div>
-                            <div class="skill-item">
-                                <i class="fas fa-lightbulb"></i>
+                                <i class="fas fa-lightbulb" aria-hidden="true"></i>
                                 <span>Inovação</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-language" aria-hidden="true"></i>
+                                <span>Português/Inglês</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 
+                <!-- Coluna Direita: Estatísticas e Objetivos -->
                 <div class="sobre-visual">
                     <div class="stats-card">
                         <div class="stat">
-                            <div class="stat-number" id="projetos-count">0</div>
+                            <div class="stat-number" id="projetos-count" aria-live="polite">0</div>
                             <div class="stat-label" data-key="about.projects">Projetos Concluídos</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number" id="certificados-count">0</div>
+                            <div class="stat-number" id="certificados-count" aria-live="polite">0</div>
                             <div class="stat-label" data-key="about.certificates">Certificados</div>
                         </div>
                         <div class="stat">
-                            <div class="stat-number" id="experiencia-count">0</div>
+                            <div class="stat-number" id="experiencia-count" aria-live="polite">0</div>
                             <div class="stat-label" data-key="about.experience">Anos de Experiência</div>
                         </div>
                     </div>
@@ -161,18 +207,20 @@
         </div>
     </section>
 
-    <!-- Liderança Section -->
-    <section id="lideranca" class="section bg-light">
+    <!-- ==================== LIDERANÇA ==================== -->
+    <section id="lideranca" class="section bg-light" aria-labelledby="lideranca-title">
         <div class="container">
-            <h2 class="section-title">Liderança - Young Life</h2>
+            <h2 class="section-title" id="lideranca-title">Liderança - Young Life</h2>
+            
             <div class="lideranca-intro">
                 <h3 data-key="leadership.journey">🌟 Minha Jornada de Liderança</h3>
                 <p data-key="leadership.journeyText">Atuação como líder juvenil na Young Life Moçambique, coordenando atividades, mentorando jovens e desenvolvendo habilidades de comunicação e trabalho em equipe.</p>
             </div>
 
+            <!-- Atividades de Liderança -->
             <div class="atividades-grid">
                 <div class="atividade-card">
-                    <div class="atividade-icon">
+                    <div class="atividade-icon" aria-hidden="true">
                         <i class="fas fa-users"></i>
                     </div>
                     <h4 data-key="leadership.coordination">Coordenação de Grupos</h4>
@@ -180,7 +228,7 @@
                 </div>
                 
                 <div class="atividade-card">
-                    <div class="atividade-icon">
+                    <div class="atividade-icon" aria-hidden="true">
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
                     <h4 data-key="leadership.mentoring">Mentoria</h4>
@@ -188,7 +236,7 @@
                 </div>
                 
                 <div class="atividade-card">
-                    <div class="atividade-icon">
+                    <div class="atividade-icon" aria-hidden="true">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h4 data-key="leadership.events">Organização de Eventos</h4>
@@ -199,46 +247,47 @@
             <!-- Galeria Young Life -->
             <div class="galeria-section">
                 <h3 data-key="leadership.gallery">📸 Galeria - Young Life</h3>
-                <div id="youngLifeGallery">
-                    <div style="text-align: center; padding: 40px; color: #666;">
-                        <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-                        <p>Carregando galeria...</p>
+                <div id="youngLifeGallery" aria-live="polite">
+                    <div class="loading-state">
+                        <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        <p data-lang="loading">Carregando galeria...</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Programação Section -->
-    <section id="programacao" class="section">
+    <!-- ==================== PROGRAMAÇÃO ==================== -->
+    <section id="programacao" class="section" aria-labelledby="programacao-title">
         <div class="container">
-            <h2 class="section-title">Programação & Projetos</h2>
+            <h2 class="section-title" id="programacao-title">Programação & Projetos</h2>
             
+            <!-- Tech Stack -->
             <div class="tech-stack">
                 <h3 data-key="programming.tech">💻 Tecnologias que Utilizo</h3>
                 <div class="tech-grid">
                     <div class="tech-item">
-                        <i class="fab fa-python"></i>
+                        <i class="fab fa-python" aria-hidden="true"></i>
                         <span>Python</span>
                     </div>
                     <div class="tech-item">
-                        <i class="fab fa-js-square"></i>
+                        <i class="fab fa-js-square" aria-hidden="true"></i>
                         <span>JavaScript</span>
                     </div>
                     <div class="tech-item">
-                        <i class="fas fa-microchip"></i>
+                        <i class="fas fa-microchip" aria-hidden="true"></i>
                         <span>Arduino</span>
                     </div>
                     <div class="tech-item">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-robot" aria-hidden="true"></i>
                         <span>Tinkercad</span>
                     </div>
                     <div class="tech-item">
-                        <i class="fab fa-html5"></i>
+                        <i class="fab fa-html5" aria-hidden="true"></i>
                         <span>HTML/CSS</span>
                     </div>
                     <div class="tech-item">
-                        <i class="fab fa-git-alt"></i>
+                        <i class="fab fa-git-alt" aria-hidden="true"></i>
                         <span>Git</span>
                     </div>
                 </div>
@@ -247,8 +296,8 @@
             <!-- Projetos GitHub -->
             <div class="projetos-section">
                 <h3 data-key="programming.projects">🚀 Meus Projetos no GitHub</h3>
-                <div class="projetos-grid" id="projetosGitHub">
-                    <!-- Projetos carregados via JavaScript -->
+                <div class="projetos-grid" id="projetosGitHub" aria-live="polite">
+                    <!-- Projetos carregados via projetos.js -->
                 </div>
             </div>
 
@@ -256,149 +305,240 @@
             <div class="github-links">
                 <h3 data-key="programming.github">🔗 Meu GitHub</h3>
                 <div class="github-stats">
-                    <a href="https://github.com/mazinguireshelton-a11y" class="github-btn" target="_blank" data-key="programming.visit">
-                        <i class="fab fa-github"></i>
-                        Visitar Meu GitHub
+                    <a href="https://github.com/mazinguireshelton-a11y" 
+                       class="github-btn" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Visitar perfil do GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span data-key="programming.visit">Visitar Meu GitHub</span>
                     </a>
                     <div class="stats">
-                        <span class="stat" data-key="programming.repos">Repositórios: <strong id="repoCount">0</strong></span>
-                        <span class="stat" data-key="programming.followers">Seguidores: <strong id="followersCount">0</strong></span>
+                        <span class="stat">
+                            <span data-key="programming.repos">Repositórios:</span>
+                            <strong id="repoCount" aria-live="polite">0</strong>
+                        </span>
+                        <span class="stat">
+                            <span data-key="programming.followers">Seguidores:</span>
+                            <strong id="followersCount" aria-live="polite">0</strong>
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Cursos Section -->
-    <section id="cursos" class="section bg-light">
+    <!-- ==================== CURSOS ==================== -->
+    <section id="cursos" class="section bg-light" aria-labelledby="cursos-title">
         <div class="container">
-            <h2 class="section-title">Cursos & Certificações</h2>
+            <h2 class="section-title" id="cursos-title">Cursos & Certificações</h2>
             
             <div class="cursos-header">
                 <h3 data-key="courses.header">📚 Cursos do Alisson que Estou Fazendo</h3>
                 <p data-key="courses.subtitle">Desenvolvimento contínuo através de cursos online para aprimorar minhas habilidades técnicas</p>
             </div>
 
-            <div class="cursos-grid" id="cursosGrid">
+            <!-- Grid de Cursos -->
+            <div class="cursos-grid" id="cursosGrid" aria-live="polite">
                 <!-- Cursos carregados via JavaScript -->
             </div>
 
             <!-- Certificados -->
             <div class="certificados-section">
                 <h3 data-key="courses.certificates">🏆 Meus Certificados</h3>
-                <div class="certificados-grid" id="certificadosGrid">
+                <div class="certificados-grid" id="certificadosGrid" aria-live="polite">
                     <!-- Certificados carregados via JavaScript -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Esportes Section -->
-    <section id="esportes" class="section">
-        <div class="container">
-            <h2 class="section-title">Esportes - Handebol</h2>
-            
-            <div class="esportes-intro">
-                <div class="esportes-content">
-                    <h3 data-key="sports.passion">🏐 Minha Paixão pelo Handebol</h3>
-                    <p data-key="sports.passionText">Prática regular de handebol competitivo, desenvolvendo disciplina, trabalho em equipe e espírito esportivo através de treinos e competições escolares.</p>
-                    
-                    <div class="esportes-stats">
-                        <div class="esporte-stat">
-                            <div class="esporte-number" id="anos-jogando">3</div>
-                            <div class="esporte-label" data-key="sports.years">Anos Jogando</div>
-                        </div>
-                        <div class="esporte-stat">
-                            <div class="esporte-number" id="jogos-competitivos">15</div>
-                            <div class="esporte-label" data-key="sports.games">Jogos Competitivos</div>
-                        </div>
-                        <div class="esporte-stat">
-                            <div class="esporte-number" id="premiacoes">5</div>
-                            <div class="esporte-label" data-key="sports.awards">Premiações</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="esportes-beneficios">
-                    <h4 data-key="sports.benefits">🎯 Benefícios do Esporte</h4>
-                    <ul>
-                        <li data-key="sports.benefit1">Disciplina e foco</li>
-                        <li data-key="sports.benefit2">Trabalho em equipe</li>
-                        <li data-key="sports.benefit3">Gestão do tempo</li>
-                        <li data-key="sports.benefit4">Resiliência mental</li>
-                        <li data-key="sports.benefit5">Saúde física</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Galeria de Esportes -->
-            <div class="galeria-esportes">
-                <h3 data-key="sports.moments">📸 Momentos do Handebol</h3>
-                <div class="galeria-grid" id="galeriaEsportes">
-                    <!-- Fotos carregadas via JavaScript -->
-                </div>
-            </div>
-
-            <!-- Vídeos -->
-            <div class="videos-section">
-                <h3 data-key="sports.videos">🎥 Vídeos dos Jogos</h3>
-                <div class="videos-grid" id="videosGrid">
-                    <!-- Vídeos carregados via JavaScript -->
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
+                <!-- Informações Pessoais -->
                 <div class="footer-info">
-                    <h3>Shelton mazinguire  Manuel</h3>
-                    <p data-key="footer.tagline">Estudante | Programador | Líder | Atleta</p>
+                    <h3>Shelton Mazinguire Manuel</h3>
+                    <p data-key="footer.tagline">Estudante | Programador | Líder</p>
                     <p data-key="footer.mission">Transformando paixão em projetos concretos</p>
                 </div>
                 
+                <!-- Redes Sociais -->
                 <div class="footer-links">
                     <h4 data-key="footer.connect">Conecte-se Comigo</h4>
                     <div class="social-links">
-                        <a href="https://github.com/mazinguireshelton-a11y" target="_blank">
-                            <i class="fab fa-github"></i>
+                        <a href="https://github.com/mazinguireshelton-a11y" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
                         </a>
-                        <a href="mailto:shelton.mazinguire@yandex.com">
-                            <i class="fas fa-envelope"></i>
+                        <a href="mailto:shelton.mazinguire@yandex.com" 
+                           aria-label="Email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                         </a>
-                        <a href="#">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/shelton-mazinguire-88b461398" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="LinkedIn">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                         </a>
-                        <a href="https://www.instagram.com/sheltonmazinguire?igsh=NG93OWIzZWhpMjhm">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://www.instagram.com/sheltonmazinguire" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wa.me/qr/ENZ3XAI5NHQBE1" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
                 
+                <!-- Contato -->
                 <div class="footer-contact">
                     <h4 data-key="footer.contact">Contato</h4>
-                    <p><i class="fas fa-phone"></i> +258 875962589</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Chimoio, Moçambique</p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> +258 875962589</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Chimoio, Moçambique</p>
                 </div>
             </div>
             
+            <!-- Rodapé Inferior -->
             <div class="footer-bottom">
                 <p data-key="footer.rights">&copy; 2025 Shelton Mazinguire Manuel. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts na ORDEM CORRETA -->
-    <script src="js/menu-mobile.js"></script>
-    <script src="js/translations-hybrid.js"></script>
-    <script src="js/contadores.js"></script>
-    <script src="js/galeria.js"></script>
-    <script src="js/projetos.js"></script>
-    
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- REMOVA integration.js e testes redundantes -->
+<!-- ==================== SCRIPTS ==================== -->
+<!-- Mantenha esta ordem SIMPLES -->
+<script src="js/translations.js"></script>
+<script src="js/lang.js"></script>
+<script src="js/menu-mobile.js"></script>
+<script src="js/contadores.js"></script>
+<script src="js/galeria.js"></script>
+<script src="js/projetos.js"></script>
+
+<!-- SCRIPT DE CORREÇÃO DOS BOTÕES - VERSÃO SIMPLIFICADA -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('🔧 Inicializando sistema de tradução...');
+        
+        // Função para configurar botões de idioma
+        function setupLanguageButtons() {
+            const mainButton = document.getElementById('universalLangBtn');
+            const dropdown = document.querySelector('.lang-dropdown');
+            const options = document.querySelectorAll('.lang-option');
+            
+            if (!mainButton || !dropdown) {
+                console.error('❌ Botões de idioma não encontrados');
+                return;
+            }
+            
+            console.log(`✅ ${options.length} botões de idioma encontrados`);
+            
+            // Abre/fecha dropdown
+            mainButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+            
+            // Configura cada opção
+            options.forEach(function(option) {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const lang = this.getAttribute('data-lang');
+                    console.log(`🌐 Idioma selecionado: ${lang}`);
+                    
+                    // Usa o sistema de tradução do translations.js
+                    if (window.translationManager && window.translationManager.changeLanguage) {
+                        window.translationManager.changeLanguage(lang);
+                    } else if (window.changeLanguage) {
+                        window.changeLanguage(lang);
+                    } else {
+                        console.error('❌ Sistema de tradução não encontrado');
+                    }
+                    
+                    // Fecha dropdown
+                    dropdown.classList.remove('active');
+                    
+                    // Atualiza botão principal
+                    updateMainButton(lang);
+                });
+            });
+            
+            // Fecha dropdown ao clicar fora
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.language-selector')) {
+                    dropdown.classList.remove('active');
+                }
+            });
+            
+            // Fecha dropdown com ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    dropdown.classList.remove('active');
+                }
+            });
+            
+            console.log('✅ Botões de idioma configurados');
+        }
+        
+        // Função para atualizar botão principal
+        function updateMainButton(lang) {
+            const button = document.getElementById('universalLangBtn');
+            if (!button) return;
+            
+            const flagMap = {
+                'pt': '🇵🇹',
+                'en': '🇺🇸',
+                'es': '🇪🇸',
+                'fr': '🇫🇷',
+                'ru': '🇷🇺',
+                'zh': '🇨🇳'
+            };
+            
+            const codeMap = {
+                'pt': 'PT',
+                'en': 'EN',
+                'es': 'ES',
+                'fr': 'FR',
+                'ru': 'RU',
+                'zh': 'ZH'
+            };
+            
+            const flagSpan = button.querySelector('.flag');
+            const codeSpan = button.querySelector('.lang-code');
+            
+            if (flagSpan && flagMap[lang]) {
+                flagSpan.textContent = flagMap[lang];
+            }
+            
+            if (codeSpan && codeMap[lang]) {
+                codeSpan.textContent = codeMap[lang];
+            }
+            
+            console.log(`🔄 Botão principal atualizado para: ${lang}`);
+        }
+        
+        // Configura os botões após carregar a página
+        setTimeout(setupLanguageButtons, 500);
+        
+        // Tenta novamente após 2 segundos se não funcionar
+        setTimeout(function() {
+            if (!document.querySelector('.lang-btn').hasEventListener) {
+                setupLanguageButtons();
+            }
+        }, 2000);
+    });
+</script>  
 </body>
 </html>
-
-<!-- Meta tags para ajudar tradução do navegador -->
-<meta name="description" content="Portfólio de Shelton Manuel - Estudante, Programador, Líder e Atleta">

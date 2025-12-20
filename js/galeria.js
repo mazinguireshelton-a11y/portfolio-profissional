@@ -1,61 +1,61 @@
-// js/galeria.js - GALERIA DEFINITIVA
-console.log("🚀 GALERIA YOUNG LIFE INICIADA!");
+// js/galeria.js - DEFINITIVE GALLERY
+console.log("🚀 YOUNG LIFE GALLERY STARTED!");
 
 class YoungLifeGallery {
     constructor() {
-        this.fotos = [];
-        this.categoriaAtual = 'todos';
+        this.photos = [];
+        this.currentCategory = 'all';
         this.init();
     }
 
     init() {
-        console.log("🎯 Inicializando galeria...");
-        this.carregarFotos();
-        this.criarInterface();
-        this.renderizarCategorias();
-        this.renderizarGaleria();
-        console.log("✅ Galeria pronta!");
+        console.log("🎯 Initializing gallery...");
+        this.loadPhotos();
+        this.createInterface();
+        this.renderCategories();
+        this.renderGallery();
+        console.log("✅ Gallery ready!");
     }
 
-    carregarFotos() {
-        this.fotos = [
-            // CLUBE DE JOVENS
-            { id: 1, src: 'assets/images/lideranca/clube-jovens/1760900215546.jpg', title: 'Reunião do Clube de Jovens', categoria: 'clube-jovens' },
-            { id: 2, src: 'assets/images/lideranca/clube-jovens/1760900217415.jpg', title: 'Atividades em Grupo', categoria: 'clube-jovens' },
-            { id: 3, src: 'assets/images/lideranca/clube-jovens/IMG_20250928_192956_706.webp', title: 'Discussão e Partilha', categoria: 'clube-jovens' },
-            { id: 4, src: 'assets/images/lideranca/clube-jovens/1760900211523.jpg', title: 'Momento de Reflexão', categoria: 'clube-jovens' },
-            { id: 5, src: 'assets/images/lideranca/clube-jovens/1760900206345.jpg', title: 'Integração entre Membros', categoria: 'clube-jovens' },
+    loadPhotos() {
+        this.photos = [
+            // YOUTH CLUB
+            { id: 1, src: 'assets/images/lideranca/clube-jovens/1760900215546.jpg', title: 'Youth Club Meeting', category: 'clube-jovens' },
+            { id: 2, src: 'assets/images/lideranca/clube-jovens/1760900217415.jpg', title: 'Group Activities', category: 'clube-jovens' },
+            { id: 3, src: 'assets/images/lideranca/clube-jovens/IMG_20250928_192956_706.webp', title: 'Discussion and Sharing', category: 'clube-jovens' },
+            { id: 4, src: 'assets/images/lideranca/clube-jovens/1760900211523.jpg', title: 'Moment of Reflection', category: 'clube-jovens' },
+            { id: 5, src: 'assets/images/lideranca/clube-jovens/1760900206345.jpg', title: 'Member Integration', category: 'clube-jovens' },
             
-            // ACAMPAMENTO 1
-            { id: 6, src: 'assets/images/lideranca/acampamento/1760900646428.jpg', title: 'Chegada ao Acampamento', categoria: 'acampamento1' },
-            { id: 7, src: 'assets/images/lideranca/acampamento/1760900664661.jpg', title: 'Atividades ao Ar Livre', categoria: 'acampamento1' },
-            { id: 8, src: 'assets/images/lideranca/acampamento/1760900627954.jpg', title: 'Trabalho em Equipe', categoria: 'acampamento1' },
-            { id: 9, src: 'assets/images/lideranca/acampamento/1760900609363.jpg', title: 'Momento de Descontração', categoria: 'acampamento1' },
-            { id: 10, src: 'assets/images/lideranca/acampamento/1760900671898.jpg', title: 'Grupo Unido', categoria: 'acampamento1' },
-            { id: 11, src: 'assets/images/lideranca/acampamento/1760900641987.jpg', title: 'Atividades Recreativas', categoria: 'acampamento1' },
+            // CAMPING 1
+            { id: 6, src: 'assets/images/lideranca/acampamento/1760900646428.jpg', title: 'Arrival at Camp', category: 'acampamento1' },
+            { id: 7, src: 'assets/images/lideranca/acampamento/1760900664661.jpg', title: 'Outdoor Activities', category: 'acampamento1' },
+            { id: 8, src: 'assets/images/lideranca/acampamento/1760900627954.jpg', title: 'Teamwork', category: 'acampamento1' },
+            { id: 9, src: 'assets/images/lideranca/acampamento/1760900609363.jpg', title: 'Relaxation Moment', category: 'acampamento1' },
+            { id: 10, src: 'assets/images/lideranca/acampamento/1760900671898.jpg', title: 'United Group', category: 'acampamento1' },
+            { id: 11, src: 'assets/images/lideranca/acampamento/1760900641987.jpg', title: 'Recreational Activities', category: 'acampamento1' },
             
-            // ACAMPAMENTO 2
-            { id: 12, src: 'assets/images/lideranca/acampamento2/1760900586249.jpg', title: 'Segundo Acampamento', categoria: 'acampamento2' },
-            { id: 13, src: 'assets/images/lideranca/acampamento2/1760900582432.jpg', title: 'Dinâmicas de Grupo', categoria: 'acampamento2' },
-            { id: 14, src: 'assets/images/lideranca/acampamento2/1760900601605.jpg', title: 'Encerramento do Acampamento', categoria: 'acampamento2' },
+            // CAMPING 2
+            { id: 12, src: 'assets/images/lideranca/acampamento2/1760900586249.jpg', title: 'Second Camping', category: 'acampamento2' },
+            { id: 13, src: 'assets/images/lideranca/acampamento2/1760900582432.jpg', title: 'Group Dynamics', category: 'acampamento2' },
+            { id: 14, src: 'assets/images/lideranca/acampamento2/1760900601605.jpg', title: 'Camp Closing', category: 'acampamento2' },
             
-            // GRADUAÇÃO
-            { id: 15, src: 'assets/images/lideranca/graduacao/FB_IMG_1730052671087_1.jpg', title: 'Cerimônia de Graduação', categoria: 'graduacao' }
+            // GRADUATION
+            { id: 15, src: 'assets/images/lideranca/graduacao/FB_IMG_1730052671087_1.jpg', title: 'Graduation Ceremony', category: 'graduacao' }
         ];
-        console.log(`📸 ${this.fotos.length} fotos carregadas`);
+        console.log(`📸 ${this.photos.length} photos loaded`);
     }
 
-    criarInterface() {
+    createInterface() {
         const container = document.getElementById('youngLifeGallery');
         if (!container) {
-            console.error("❌ Container youngLifeGallery não encontrado!");
+            console.error("❌ youngLifeGallery container not found!");
             return;
         }
 
         container.innerHTML = `
             <div class="gallery-header">
-                <h2>📸 Galeria - Young Life</h2>
-                <p>Momentos especiais da minha jornada de liderança juvenil</p>
+                <h2>📸 Gallery - Young Life</h2>
+                <p>Special moments from my youth leadership journey</p>
             </div>
             
             <div class="categories-menu">
@@ -67,119 +67,119 @@ class YoungLifeGallery {
             </div>
 
             <div class="video-section">
-                <h3>🎥 Vídeo Especial</h3>
+                <h3>🎥 Special Video</h3>
                 <div class="video-container">
                     <video controls poster="assets/images/lideranca/graduacao/FB_IMG_1730052671087_1.jpg">
                         <source src="assets/videos/lideranca/graduacao/FDownloader_Net_AQN1iVdhc2dCuf65M4PBbWLWctYtXvdDqqAgql5OAvnGAAhAJYw5LXqs2RZ8dtafW21KtpWLXca18l5FPZh_3Sh_360p_SD_V1.mp4" type="video/mp4">
-                        <p>Seu navegador não suporta o elemento de vídeo.</p>
+                        <p>Your browser does not support the video element.</p>
                     </video>
                     <div class="video-info">
-                        <h4>Momento de Celebração</h4>
-                        <p>Vídeo especial da cerimônia de graduação e celebração dos nossos achievements no Young Life</p>
+                        <h4>Celebration Moment</h4>
+                        <p>Special video of the graduation ceremony and celebration of our achievements in Young Life</p>
                     </div>
                 </div>
             </div>
         `;
 
-        console.log("✅ Interface criada!");
+        console.log("✅ Interface created!");
     }
 
-    renderizarCategorias() {
+    renderCategories() {
         const container = document.getElementById('categoriesGrid');
         if (!container) return;
 
-        const categorias = [
-            { id: 'todos', name: 'Todas as Fotos', count: this.fotos.length, cor: '#1a365d' },
-            { id: 'clube-jovens', name: 'Clube de Jovens', count: this.fotos.filter(f => f.categoria === 'clube-jovens').length, cor: '#e53e3e' },
-            { id: 'acampamento1', name: 'Acampamento 1', count: this.fotos.filter(f => f.categoria === 'acampamento1').length, cor: '#38a169' },
-            { id: 'acampamento2', name: 'Acampamento 2', count: this.fotos.filter(f => f.categoria === 'acampamento2').length, cor: '#d69e2e' },
-            { id: 'graduacao', name: 'Graduação', count: this.fotos.filter(f => f.categoria === 'graduacao').length, cor: '#805ad5' }
+        const categories = [
+            { id: 'all', name: 'All Photos', count: this.photos.length, color: '#1a365d' },
+            { id: 'clube-jovens', name: 'Youth Club', count: this.photos.filter(f => f.category === 'clube-jovens').length, color: '#e53e3e' },
+            { id: 'acampamento1', name: 'Camping 1', count: this.photos.filter(f => f.category === 'acampamento1').length, color: '#38a169' },
+            { id: 'acampamento2', name: 'Camping 2', count: this.photos.filter(f => f.category === 'acampamento2').length, color: '#d69e2e' },
+            { id: 'graduacao', name: 'Graduation', count: this.photos.filter(f => f.category === 'graduacao').length, color: '#805ad5' }
         ];
 
-        container.innerHTML = categorias.map(cat => `
-            <div class="category-card ${this.categoriaAtual === cat.id ? 'active' : ''}" 
-                 onclick="window.galeria.filtrarPorCategoria('${cat.id}')"
-                 style="border-left: 4px solid ${cat.cor}">
+        container.innerHTML = categories.map(cat => `
+            <div class="category-card ${this.currentCategory === cat.id ? 'active' : ''}" 
+                 onclick="window.galeria.filterByCategory('${cat.id}')"
+                 style="border-left: 4px solid ${cat.color}">
                 <div class="category-info">
                     <h3>${cat.name}</h3>
-                    <span class="photo-count">${cat.count} fotos</span>
+                    <span class="photo-count">${cat.count} photos</span>
                 </div>
                 <div class="category-arrow">→</div>
             </div>
         `).join('');
 
-        console.log("✅ Categorias renderizadas!");
+        console.log("✅ Categories rendered!");
     }
 
-    filtrarPorCategoria(categoria) {
-        this.categoriaAtual = categoria;
-        this.renderizarCategorias();
-        this.renderizarGaleria();
-        console.log(`🎯 Filtrado: ${categoria}`);
+    filterByCategory(category) {
+        this.currentCategory = category;
+        this.renderCategories();
+        this.renderGallery();
+        console.log(`🎯 Filtered: ${category}`);
     }
 
-    renderizarGaleria() {
+    renderGallery() {
         const container = document.getElementById('photosGrid');
         if (!container) return;
 
-        const fotosFiltradas = this.categoriaAtual === 'todos' 
-            ? this.fotos 
-            : this.fotos.filter(foto => foto.categoria === this.categoriaAtual);
+        const filteredPhotos = this.currentCategory === 'all' 
+            ? this.photos 
+            : this.photos.filter(photo => photo.category === this.currentCategory);
 
-        container.innerHTML = fotosFiltradas.map(foto => {
+        container.innerHTML = filteredPhotos.map(photo => {
             return `
-            <div class="photo-card" onclick="window.galeria.abrirModal(${foto.id})">
+            <div class="photo-card" onclick="window.galeria.openModal(${photo.id})">
                 <div class="photo-image">
-                    <img src="${foto.src}" alt="${foto.title}" 
+                    <img src="${photo.src}" alt="${photo.title}" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
                     <div class="photo-error" style="display: none;">
-                        ❌ Erro ao carregar
+                        ❌ Error loading
                     </div>
                     <div class="photo-overlay">
-                        <span class="view-btn">👁️ Ver</span>
+                        <span class="view-btn">👁️ View</span>
                     </div>
                 </div>
                 <div class="photo-info">
-                    <h4>${foto.title}</h4>
+                    <h4>${photo.title}</h4>
                     <div class="photo-meta">
-                        <span class="category-badge ${foto.categoria}">${this.getNomeCategoria(foto.categoria)}</span>
+                        <span class="category-badge ${photo.category}">${this.getCategoryName(photo.category)}</span>
                     </div>
                 </div>
             </div>
         `;
         }).join('');
 
-        console.log(`✅ ${fotosFiltradas.length} fotos renderizadas`);
+        console.log(`✅ ${filteredPhotos.length} photos rendered`);
     }
 
-    getNomeCategoria(categoria) {
-        const nomes = {
-            'clube-jovens': 'Clube',
-            'acampamento1': 'Acamp. 1',
-            'acampamento2': 'Acamp. 2', 
-            'graduacao': 'Graduação'
+    getCategoryName(category) {
+        const names = {
+            'clube-jovens': 'Club',
+            'acampamento1': 'Camp 1',
+            'acampamento2': 'Camp 2', 
+            'graduacao': 'Graduation'
         };
-        return nomes[categoria] || categoria;
+        return names[category] || category;
     }
 
-    abrirModal(fotoId) {
-        const foto = this.fotos.find(f => f.id === fotoId);
-        if (!foto) return;
+    openModal(photoId) {
+        const photo = this.photos.find(f => f.id === photoId);
+        if (!photo) return;
 
-        // Remove modal existente
-        const modalExistente = document.querySelector('.photo-modal');
-        if (modalExistente) modalExistente.remove();
+        // Remove existing modal
+        const existingModal = document.querySelector('.photo-modal');
+        if (existingModal) existingModal.remove();
 
         const modal = document.createElement('div');
         modal.className = 'photo-modal';
         modal.innerHTML = `
             <div class="modal-content">
-                <span class="close-modal" onclick="window.galeria.fecharModal()">&times;</span>
-                <img src="${foto.src}" alt="${foto.title}">
+                <span class="close-modal" onclick="window.galeria.closeModal()">&times;</span>
+                <img src="${photo.src}" alt="${photo.title}">
                 <div class="modal-info">
-                    <h3>${foto.title}</h3>
+                    <h3>${photo.title}</h3>
                     <div class="modal-meta">
-                        <span class="category">${this.getNomeCategoria(foto.categoria)}</span>
+                        <span class="category">${this.getCategoryName(photo.category)}</span>
                     </div>
                 </div>
             </div>
@@ -187,30 +187,30 @@ class YoungLifeGallery {
 
         document.body.appendChild(modal);
         
-        // Fecha ao clicar fora
+        // Close when clicking outside
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
-                this.fecharModal();
+                this.closeModal();
             }
         });
 
-        // Fecha com ESC
+        // Close with ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                this.fecharModal();
+                this.closeModal();
             }
         });
     }
 
-    fecharModal() {
+    closeModal() {
         const modal = document.querySelector('.photo-modal');
         if (modal) modal.remove();
     }
 }
 
-// Adicionar CSS exato que você enviou
+// Add exact CSS that you sent
 const galleryCSS = `
-    /* ===== GALERIA YOUNG LIFE ===== */
+    /* ===== YOUNG LIFE GALLERY ===== */
     .gallery-header {
         text-align: center;
         margin-bottom: 3rem;
@@ -229,7 +229,7 @@ const galleryCSS = `
         margin: 0 auto;
     }
     
-    /* Categorias */
+    /* Categories */
     .categories-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -278,7 +278,7 @@ const galleryCSS = `
         transform: translateX(5px);
     }
     
-    /* Grid de Fotos */
+    /* Photo Grid */
     .photos-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -398,7 +398,7 @@ const galleryCSS = `
         color: #6b46c1;
     }
     
-    /* Seção de Vídeo */
+    /* Video Section */
     .video-section {
         margin-top: 4rem;
         padding-top: 3rem;
@@ -507,7 +507,7 @@ const galleryCSS = `
         align-items: center;
     }
     
-    /* Responsividade */
+    /* Responsiveness */
     @media (max-width: 768px) {
         .categories-grid {
             grid-template-columns: 1fr;
@@ -551,13 +551,13 @@ const galleryCSS = `
     }
 `;
 
-// Adicionar CSS ao documento
+// Add CSS to document
 const style = document.createElement('style');
 style.textContent = galleryCSS;
 document.head.appendChild(style);
 
-// Inicializar
+// Initialize
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('📄 DOM Carregado - Iniciando galeria...');
+    console.log('📄 DOM Loaded - Starting gallery...');
     window.galeria = new YoungLifeGallery();
 });

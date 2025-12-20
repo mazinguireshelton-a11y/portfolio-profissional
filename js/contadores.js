@@ -1,101 +1,101 @@
-// js/contadores.js - VERSÃO COM DESCRIÇÕES NOS CERTIFICADOS
-console.log('🎯 SISTEMA DE CONTADORES INICIADO!');
+// js/contadores.js - VERSION WITH DESCRIPTIONS ON CERTIFICATES
+console.log('🎯 COUNTER SYSTEM STARTED!');
 
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('📄 DOM Carregado - Iniciando contadores...');
+    console.log('📄 DOM Loaded - Starting counters...');
     
-    // SEUS 2 CERTIFICADOS REAIS - COM DESCRIÇÕES
-    const certificados = [
+    // YOUR 2 REAL CERTIFICATES - WITH DESCRIPTIONS
+    const certificates = [
         {
             id: 1,
-            nome: "Certificado de Liderança Young Life 2024",
-            instituicao: "Young Life Moçambique", 
-            data: "2024",
-            arquivo: "certificado-lideranca-2024.pdf.pdf",
-            descricao: "Neste curso de liderança aprendi: como trabalhar em equipe, como liderar pessoas, paciência, e como saber falar com pessoas."
+            name: "Young Life Leadership Certificate 2024",
+            institution: "Young Life Mozambique", 
+            date: "2024",
+            file: "certificado-lideranca-2024.pdf.pdf",
+            description: "In this leadership course I learned: how to work in a team, how to lead people, patience, and how to communicate with people."
         },
         {
             id: 2, 
-            nome: "Certificado de Liderança Young Life 2025", 
-            instituicao: "Young Life Moçambique",
-            data: "2025", 
-            arquivo: "certificado-lideranca-2025.pdf.pdf",
-            descricao: "Neste curso aprofundei meus conhecimentos em: como liderar uma equipe eficazmente e como assumir responsabilidades."
+            name: "Young Life Leadership Certificate 2025", 
+            institution: "Young Life Mozambique",
+            date: "2025", 
+            file: "certificado-lideranca-2025.pdf.pdf",
+            description: "In this course I deepened my knowledge in: how to lead a team effectively and how to take on responsibilities."
         }
     ];
 
-    // ATUALIZA CONTADORES
-    function atualizarContadores() {
-        console.log('🔢 Atualizando contadores...');
+    // UPDATE COUNTERS
+    function updateCounters() {
+        console.log('🔢 Updating counters...');
         
-        // SEUS NÚMEROS REAIS
+        // YOUR REAL NUMBERS
         // ...
-        const projetosCount = document.getElementById('projetos-count'); // Pode apagar esta linha se quiser
-        const certificadosCount = document.getElementById('certificados-count');
-        const experienciaCount = document.getElementById('experiencia-count');
+        const projectsCount = document.getElementById('projetos-count'); // You can delete this line if you want
+        const certificatesCount = document.getElementById('certificados-count');
+        const experienceCount = document.getElementById('experiencia-count');
 
-        if (projetosCount) projetosCount.textContent = '3';
-        if (certificadosCount) certificadosCount.textContent = certificados.length.toString();
-        if (experienciaCount) experienciaCount.textContent = '2';
+        if (projectsCount) projectsCount.textContent = '3';
+        if (certificatesCount) certificatesCount.textContent = certificates.length.toString();
+        if (experienceCount) experienceCount.textContent = '2';
         
-        console.log('✅ Contadores atualizados: Projetos=3, Certificados=' + certificados.length + ', Experiência=2');
+        console.log('✅ Counters updated: Projects=3, Certificates=' + certificates.length + ', Experience=2');
     }
 
-    // RENDERIZA CERTIFICADOS
-    function renderizarCertificados() {
+    // RENDER CERTIFICATES
+    function renderCertificates() {
         const container = document.getElementById('certificadosGrid');
         if (!container) {
-            console.log('❌ Container certificadosGrid não encontrado, procurando alternativas...');
+            console.log('❌ Container certificadosGrid not found, looking for alternatives...');
             
-            // Tenta encontrar outros containers possíveis
-            const alternativas = document.querySelector('.certificados-grid');
-            if (alternativas) {
-                console.log('✅ Encontrado .certificados-grid');
-                renderizarNoContainer(alternativas);
+            // Try to find other possible containers
+            const alternatives = document.querySelector('.certificados-grid');
+            if (alternatives) {
+                console.log('✅ Found .certificados-grid');
+                renderInContainer(alternatives);
             } else {
-                console.log('❌ Nenhum container de certificados encontrado');
+                console.log('❌ No certificate containers found');
             }
             return;
         }
         
-        renderizarNoContainer(container);
+        renderInContainer(container);
     }
 
-    function renderizarNoContainer(container) {
-        console.log('📋 Renderizando ' + certificados.length + ' certificados...');
+    function renderInContainer(container) {
+        console.log('📋 Rendering ' + certificates.length + ' certificates...');
         
-        container.innerHTML = certificados.map(cert => `
+        container.innerHTML = certificates.map(cert => `
             <div class="certificado-card">
                 <div class="certificado-icon">
                     <i class="fas fa-file-pdf"></i>
                 </div>
-                <h4>${cert.nome}</h4>
-                <p class="certificado-instituicao">${cert.instituicao}</p>
+                <h4>${cert.name}</h4>
+                <p class="certificado-instituicao">${cert.institution}</p>
                 <div class="certificado-descricao">
-                    <p>${cert.descricao}</p>
+                    <p>${cert.description}</p>
                 </div>
-                <span class="certificado-data">${cert.data}</span>
-                <button class="btn-pdf" onclick="abrirCertificado('${cert.arquivo}')">
+                <span class="certificado-data">${cert.date}</span>
+                <button class="btn-pdf" onclick="openCertificate('${cert.file}')">
                     <i class="fas fa-eye"></i>
-                    Ver Certificado
+                    View Certificate
                 </button>
             </div>
         `).join('');
 
-        console.log('✅ Certificados renderizados!');
+        console.log('✅ Certificates rendered!');
     }
 
-    // FUNÇÃO GLOBAL PARA ABRIR PDF
-    window.abrirCertificado = function(arquivo) {
-        const caminho = `assets/certificados/${arquivo}`;
-        console.log('📂 Abrindo certificado: ' + caminho);
-        window.open(caminho, '_blank');
+    // GLOBAL FUNCTION TO OPEN PDF
+    window.openCertificate = function(file) {
+        const path = `assets/certificates/${file}`;
+        console.log('📂 Opening certificate: ' + path);
+        window.open(path, '_blank');
     }
 
-    // ADICIONA CSS SE NECESSÁRIO
-    function adicionarCSS() {
+    // ADD CSS IF NECESSARY
+    function addCSS() {
         if (!document.querySelector('#contadores-css')) {
-            const estilo = `
+            const styleText = `
                 .certificados-grid {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -170,18 +170,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const style = document.createElement('style');
             style.id = 'contadores-css';
-            style.textContent = estilo;
+            style.textContent = styleText;
             document.head.appendChild(style);
-            console.log('✅ CSS dos certificados adicionado!');
+            console.log('✅ Certificate CSS added!');
         }
     }
 
-    // INICIALIZAÇÃO
-    adicionarCSS();
-    atualizarContadores();
-    renderizarCertificados();
+    // INITIALIZATION
+    addCSS();
+    updateCounters();
+    renderCertificates();
     
-    console.log('🎯 Sistema de contadores inicializado completamente!');
+    console.log('🎯 Counter system completely initialized!');
 });
 
-console.log('✅ contadores.js carregado');
+console.log('✅ contadores.js loaded');

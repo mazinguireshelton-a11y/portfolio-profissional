@@ -1,5 +1,5 @@
-// js/projetos.js - VERSÃO CORRIGIDA E TESTADA
-console.log('🎯 PROJETOS.JS CARREGADO! Verificando elementos...');
+// js/projetos.js - CORRECTED AND TESTED VERSION
+console.log('🎯 PROJECTS.JS LOADED! Checking elements...');
 
 class GitHubIntegration {
     constructor() {
@@ -9,95 +9,95 @@ class GitHubIntegration {
     }
 
     async init() {
-        console.log('🚀 Iniciando GitHub Integration para:', this.username);
+        console.log('🚀 Starting GitHub Integration for:', this.username);
         
-        // Verificar se o container existe
+        // Check if container exists
         const container = document.getElementById('projetosGitHub');
-        console.log('📦 Container encontrado:', !!container);
+        console.log('📦 Container found:', !!container);
         
         if (!container) {
-            console.error('❌ ERRO CRÍTICO: Elemento #projetosGitHub não encontrado no HTML!');
-            this.criarContainerManual();
+            console.error('❌ CRITICAL ERROR: Element #projetosGitHub not found in HTML!');
+            this.createManualContainer();
             return;
         }
 
-        // Mostrar loading imediatamente
-        this.mostrarLoading();
+        // Show loading immediately
+        this.showLoading();
         
-        // Carregar dados do GitHub
-        await this.carregarDadosGitHub();
+        // Load GitHub data
+        await this.loadGitHubData();
     }
 
-    criarContainerManual() {
-        console.log('🛠️ Tentando criar container manualmente...');
-        const programacaoSection = document.querySelector('#programacao .container');
-        if (programacaoSection) {
-            const projetosHTML = `
+    createManualContainer() {
+        console.log('🛠️ Trying to create container manually...');
+        const programmingSection = document.querySelector('#programacao .container');
+        if (programmingSection) {
+            const projectsHTML = `
                 <div class="projetos-section">
-                    <h3>🚀 Meus Projetos no GitHub</h3>
+                    <h3>🚀 My GitHub Projects</h3>
                     <div class="projetos-grid" id="projetosGitHub">
                         <div class="projeto-card">
-                            <h4>⚠️ Container Criado Manualmente</h4>
-                            <p>O sistema está funcionando, mas houve um problema com o HTML.</p>
+                            <h4>⚠️ Container Created Manually</h4>
+                            <p>The system is working, but there was an issue with the HTML.</p>
                         </div>
                     </div>
                 </div>
             `;
-            programacaoSection.insertAdjacentHTML('beforeend', projetosHTML);
+            programmingSection.insertAdjacentHTML('beforeend', projectsHTML);
         }
     }
 
-    mostrarLoading() {
+    showLoading() {
         const container = document.getElementById('projetosGitHub');
         if (container) {
             container.innerHTML = `
                 <div class="loading-projects">
                     <i class="fas fa-spinner fa-spin"></i>
-                    <p>Carregando projetos do GitHub...</p>
-                    <small>Usuário: ${this.username}</small>
+                    <p>Loading GitHub projects...</p>
+                    <small>User: ${this.username}</small>
                 </div>
             `;
         }
     }
 
-    async carregarDadosGitHub() {
+    async loadGitHubData() {
         try {
-            console.log('📡 Conectando com GitHub API...');
+            console.log('📡 Connecting to GitHub API...');
             
-            // Primeiro busca dados do usuário
+            // First fetch user data
             const userResponse = await fetch(`https://api.github.com/users/${this.username}`);
-            console.log('👤 Status do usuário:', userResponse.status);
+            console.log('👤 User status:', userResponse.status);
             
             if (userResponse.ok) {
                 const userData = await userResponse.json();
-                console.log('✅ Usuário encontrado:', userData.name);
+                console.log('✅ User found:', userData.name);
                 
-                // Atualizar contadores
-                this.atualizarContadores(userData);
+                // Update counters
+                this.updateCounters(userData);
             }
 
-            // Buscar repositórios
+            // Fetch repositories
             const reposResponse = await fetch(`https://api.github.com/users/${this.username}/repos?sort=updated&per_page=10`);
-            console.log('📚 Status dos repositórios:', reposResponse.status);
+            console.log('📚 Repositories status:', reposResponse.status);
             
             if (reposResponse.ok) {
                 this.repos = await reposResponse.json();
-                console.log(`✅ ${this.repos.length} repositórios carregados:`);
+                console.log(`✅ ${this.repos.length} repositories loaded:`);
                 this.repos.forEach(repo => console.log(`   - ${repo.name}`));
                 
-                this.renderizarProjetos();
+                this.renderProjects();
             } else {
-                throw new Error(`GitHub API retornou status: ${reposResponse.status}`);
+                throw new Error(`GitHub API returned status: ${reposResponse.status}`);
             }
 
         } catch (error) {
-            console.error('❌ Erro ao carregar do GitHub:', error);
-            this.mostrarErro(error);
+            console.error('❌ Error loading from GitHub:', error);
+            this.showError(error);
         }
     }
 
-    atualizarContadores(userData) {
-        console.log('🔢 Atualizando contadores...');
+    updateCounters(userData) {
+        console.log('🔢 Updating counters...');
         
         const repoCount = document.getElementById('repoCount');
         const followersCount = document.getElementById('followersCount');
@@ -105,12 +105,12 @@ class GitHubIntegration {
         
         if (repoCount) {
             repoCount.textContent = userData.public_repos || 0;
-            console.log('✅ Repositórios atualizado:', userData.public_repos);
+            console.log('✅ Repositories updated:', userData.public_repos);
         }
         
         if (followersCount) {
             followersCount.textContent = userData.followers || 0;
-            console.log('✅ Seguidores atualizado:', userData.followers);
+            console.log('✅ Followers updated:', userData.followers);
         }
        
         if (projetosCount) {
@@ -118,26 +118,26 @@ class GitHubIntegration {
        }
     }
 
-    determinarStatus(repo) {
-        // Lógica inteligente para determinar status
+    determineStatus(repo) {
+        // Intelligent logic to determine status
         const now = new Date();
         const updated = new Date(repo.updated_at);
         const diffTime = now - updated;
         const diffDays = diffTime / (1000 * 60 * 60 * 24);
         
         if (repo.archived) {
-            return 'completed'; // Arquivos = Concluídos
+            return 'completed'; // Archived = Completed
         } else if (diffDays <= 30) {
-            return 'in-progress'; // Atualizado recentemente = Em andamento
+            return 'in-progress'; // Recently updated = In progress
         } else {
-            return 'planned'; // Antigo = Planejado
+            return 'planned'; // Old = Planned
         }
     }
 
-    renderizarProjetos() {
+    renderProjects() {
         const container = document.getElementById('projetosGitHub');
         if (!container) {
-            console.error('❌ Container não encontrado para renderizar');
+            console.error('❌ Container not found for rendering');
             return;
         }
 
@@ -145,13 +145,13 @@ class GitHubIntegration {
             container.innerHTML = `
                 <div class="projeto-card">
                     <div class="projeto-header">
-                        <h4>📭 Nenhum Repositório Encontrado</h4>
+                        <h4>📭 No Repositories Found</h4>
                     </div>
-                    <p>Não foram encontrados repositórios públicos para o usuário <strong>${this.username}</strong>.</p>
+                    <p>No public repositories found for user <strong>${this.username}</strong>.</p>
                     <div class="projeto-links">
                         <a href="https://github.com/${this.username}" target="_blank" class="btn-link">
                             <i class="fab fa-github"></i>
-                            Ver Perfil no GitHub
+                            View Profile on GitHub
                         </a>
                     </div>
                 </div>
@@ -160,19 +160,19 @@ class GitHubIntegration {
         }
 
         container.innerHTML = this.repos.map(repo => {
-            const status = this.determinarStatus(repo);
+            const status = this.determineStatus(repo);
             const statusText = this.getStatusText(status);
             
             return `
             <div class="projeto-card">
                 <div class="projeto-header">
-                    <h4>${this.formatarNome(repo.name)}</h4>
+                    <h4>${this.formatName(repo.name)}</h4>
                     <span class="projeto-status ${status}">
                         ${statusText}
                     </span>
                 </div>
                 
-                <p class="projeto-desc">${repo.description || 'Repositório sem descrição.'}</p>
+                <p class="projeto-desc">${repo.description || 'Repository without description.'}</p>
                 
                 <div class="projeto-technologies">
                     ${repo.language ? `<span class="tech-tag">${repo.language}</span>` : ''}
@@ -185,12 +185,12 @@ class GitHubIntegration {
                 <div class="projeto-links">
                     <a href="${repo.html_url}" target="_blank" class="btn-link">
                         <i class="fab fa-github"></i>
-                        Ver Código
+                        View Code
                     </a>
                     ${repo.homepage ? `
                         <a href="${repo.homepage}" target="_blank" class="btn-link btn-secondary">
                             <i class="fas fa-external-link-alt"></i>
-                            Ver Demo
+                            View Demo
                         </a>
                     ` : ''}
                 </div>
@@ -203,49 +203,49 @@ class GitHubIntegration {
             `;
         }).join('');
 
-        console.log('🎉 Projetos renderizados com sucesso!');
+        console.log('🎉 Projects rendered successfully!');
     }
 
-    formatarNome(nome) {
-        return nome.split('-')
-            .map(palavra => palavra.charAt(0).toUpperCase() + palavra.slice(1))
+    formatName(name) {
+        return name.split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
             .join(' ');
     }
 
     getStatusText(status) {
-        const textos = {
-            'completed': '✅ Concluído',
-            'in-progress': '🟡 Em Andamento',
-            'planned': '🔵 Planejado'
+        const texts = {
+            'completed': '✅ Completed',
+            'in-progress': '🟡 In Progress',
+            'planned': '🔵 Planned'
         };
-        return textos[status] || status;
+        return texts[status] || status;
     }
 
-    mostrarErro(error) {
+    showError(error) {
         const container = document.getElementById('projetosGitHub');
         if (container) {
             container.innerHTML = `
                 <div class="projeto-card error">
                     <div class="projeto-header">
-                        <h4>❌ Erro ao Carregar Projetos</h4>
+                        <h4>❌ Error Loading Projects</h4>
                     </div>
-                    <p>Não foi possível carregar os projetos do GitHub.</p>
-                    <p><strong>Erro:</strong> ${error.message}</p>
+                    <p>Could not load projects from GitHub.</p>
+                    <p><strong>Error:</strong> ${error.message}</p>
                     <div class="projeto-links">
                         <a href="https://github.com/${this.username}" target="_blank" class="btn-link">
                             <i class="fab fa-github"></i>
-                            Ver GitHub Manualmente
+                            View GitHub Manually
                         </a>
                     </div>
                 </div>
                 
-                <!-- Projetos de exemplo -->
+                <!-- Example projects -->
                 <div class="projeto-card">
                     <div class="projeto-header">
-                        <h4>Portfólio Pessoal</h4>
-                        <span class="projeto-status completed">✅ Concluído</span>
+                        <h4>Personal Portfolio</h4>
+                        <span class="projeto-status completed">✅ Completed</span>
                     </div>
-                    <p>Website pessoal desenvolvido com HTML, CSS e JavaScript.</p>
+                    <p>Personal website developed with HTML, CSS and JavaScript.</p>
                     <div class="projeto-technologies">
                         <span class="tech-tag">HTML</span>
                         <span class="tech-tag">CSS</span>
@@ -255,10 +255,10 @@ class GitHubIntegration {
                 
                 <div class="projeto-card">
                     <div class="projeto-header">
-                        <h4>Automação Residencial</h4>
-                        <span class="projeto-status in-progress">🟡 Em Andamento</span>
+                        <h4>Home Automation</h4>
+                        <span class="projeto-status in-progress">🟡 In Progress</span>
                     </div>
-                    <p>Sistema de controle com Arduino e sensores.</p>
+                    <p>Control system with Arduino and sensors.</p>
                     <div class="projeto-technologies">
                         <span class="tech-tag">Arduino</span>
                         <span class="tech-tag">C++</span>
@@ -269,7 +269,7 @@ class GitHubIntegration {
     }
 }
 
-// CSS ESSENCIAL - Adicionar dinamicamente
+// ESSENTIAL CSS - Add dynamically
 const essentialCSS = `
     .projeto-card {
         background: white;
@@ -404,7 +404,7 @@ const essentialCSS = `
     }
 `;
 
-// Adicionar CSS ao documento
+// Add CSS to document
 if (!document.querySelector('#projetos-css')) {
     const style = document.createElement('style');
     style.id = 'projetos-css';
@@ -412,17 +412,17 @@ if (!document.querySelector('#projetos-css')) {
     document.head.appendChild(style);
 }
 
-// Inicializar quando DOM estiver pronto
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('💼 DOM Carregado - Iniciando GitHub Integration...');
+    console.log('💼 DOM Loaded - Starting GitHub Integration...');
     window.githubIntegration = new GitHubIntegration();
 });
 
-// Backup: Inicializar também quando window carregar
+// Backup: Also initialize when window loads
 window.addEventListener('load', function() {
-    console.log('🔄 Window Carregado - Verificando se GitHub Integration iniciou...');
+    console.log('🔄 Window Loaded - Checking if GitHub Integration started...');
     if (!window.githubIntegration) {
-        console.log('⚡ Iniciando GitHub Integration via window.load...');
+        console.log('⚡ Starting GitHub Integration via window.load...');
         window.githubIntegration = new GitHubIntegration();
     }
 });
