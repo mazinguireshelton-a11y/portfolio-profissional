@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Young Life Leadership Certificate 2024",
             institution: "Young Life Mozambique", 
             date: "2024",
-            file: "certificado-lideranca-2024.pdf.pdf",
+            file: "certificado-lideranca-2024.pdf",
             description: "In this leadership course I learned: how to work in a team, how to lead people, patience, and how to communicate with people."
         },
         {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Young Life Leadership Certificate 2025", 
             institution: "Young Life Mozambique",
             date: "2025", 
-            file: "certificado-lideranca-2025.pdf.pdf",
+            file: "certificado-lideranca-2025.pdf",
             description: "In this course I deepened my knowledge in: how to lead a team effectively and how to take on responsibilities."
         }
     ];
