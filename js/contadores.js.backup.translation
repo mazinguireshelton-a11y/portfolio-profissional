@@ -1,0 +1,176 @@
+// js/contadores.js - VERSÃO CORRIGIDA SEM DUPLICAÇÃO
+console.log('🎯 SISTEMA CORRIGIDO INICIADO!');
+
+// VARIÁVEL GLOBAL para controle
+let sistemaInicializado = false;
+
+class SistemaCertificados {
+    constructor() {
+        if (sistemaInicializado) {
+            console.log('⚠️ Sistema já foi inicializado, ignorando nova instância...');
+            return;
+        }
+        
+        this.certificados = [];
+        this.init();
+    }
+
+    init() {
+        console.log('🚀 Iniciando sistema...');
+        sistemaInicializado = true;
+        this.carregarCertificados();
+        this.atualizarContadores();
+        this.renderizarCertificados();
+        this.verificarElementos();
+    }
+
+    carregarCertificados() {
+        this.certificados = [
+            {
+                id: 1,
+                nome: "Liderança Juvenil 2024",
+                instituicao: "Young Life Moçambique", 
+                data: "2024",
+                arquivo: "certificado-lideranca-2024.pdf"
+            },
+            {
+                id: 2,
+                nome: "Liderança Juvenil 2025", 
+                instituicao: "Young Life Moçambique",
+                data: "2025",
+                arquivo: "certificado-lideranca-2025.pdf"
+            }
+        ];
+        console.log('📚 Certificados carregados:', this.certificados.length);
+    }
+
+    atualizarContadores() {
+        console.log('🔢 Atualizando contadores...');
+        
+        // VALORES CORRETOS conforme solicitado
+        const contadores = {
+            'projetos-count': '3',
+            'certificados-count': this.certificados.length.toString(),
+            'experiencia-count': '2',
+            'repoCount': '0',
+            'followersCount': '0'
+        };
+
+        for (const [id, valor] of Object.entries(contadores)) {
+            this.atualizarContador(id, valor);
+        }
+    }
+
+    atualizarContador(id, valor) {
+        let elemento = document.getElementById(id);
+        
+        if (!elemento) {
+            console.log('⚠️ ' + id + ' não encontrado no DOM');
+            return;
+        }
+        
+        elemento.textContent = valor;
+        console.log('✅ ' + id + ' = ' + valor);
+    }
+
+    renderizarCertificados() {
+        const container = document.querySelector('.certificados-grid');
+        if (!container) {
+            console.log('❌ Container de certificados não encontrado');
+            return;
+        }
+
+        // VERIFICAR SE JÁ TEM CONTEÚDO para evitar duplicação
+        if (container.children.length > 0) {
+            console.log('⚠️ Certificados já renderizados, ignorando...');
+            return;
+        }
+
+        container.innerHTML = this.certificados.map(cert => `
+            <div class="certificado-card">
+                <div class="certificado-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h4>${cert.nome}</h4>
+                <p>${cert.instituicao}</p>
+                <span class="certificado-data">${cert.data}</span>
+                <button class="btn-pdf" onclick="window.sistemaCertificados.abrirPDF('${cert.arquivo}')">
+                    <i class="fas fa-eye"></i>
+                    Ver Certificado
+                </button>
+            </div>
+        `).join('');
+
+        console.log('✅ Certificados renderizados: ' + this.certificados.length);
+    }
+
+    abrirPDF(arquivo) {
+        const caminho = `assets/certificados/${arquivo}`;
+        console.log('📂 Abrindo: ' + caminho);
+        window.open(caminho, '_blank');
+    }
+
+    verificarElementos() {
+        console.log('🔍 Verificando elementos...');
+        const elementos = ['projetos-count', 'certificados-count', 'experiencia-count'];
+        
+        elementos.forEach(id => {
+            const elemento = document.getElementById(id);
+            if (elemento) {
+                console.log('✅ ' + id + ': ENCONTRADO - Valor: ' + elemento.textContent);
+            } else {
+                console.log('❌ ' + id + ': NÃO ENCONTRADO');
+            }
+        });
+    }
+}
+
+// CSS - VERIFICAR SE JÁ FOI ADICIONADO ANTES
+if (!document.querySelector('#contadores-css')) {
+    const estilo = `
+        .certificados-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .certificado-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .btn-pdf {
+            background: #1a365d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+    `;
+
+    const style = document.createElement('style');
+    style.id = 'contadores-css';
+    style.textContent = estilo;
+    document.head.appendChild(style);
+}
+
+// Inicialização CONTROLADA - apenas uma vez
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('📄 DOM Carregado! Verificando se sistema já foi inicializado...');
+    
+    if (!sistemaInicializado) {
+        console.log('🚀 Inicializando SistemaCertificados...');
+        window.sistemaCertificados = new SistemaCertificados();
+    } else {
+        console.log('⚠️ Sistema já foi inicializado anteriormente, ignorando...');
+    }
+});
+
+// Remover qualquer inicialização duplicada
+if (window.sistemaCertificados && sistemaInicializado) {
+    console.log('🛡️ Sistema já está rodando, prevenindo duplicação');
+}

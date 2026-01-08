@@ -1,0 +1,75 @@
+// js/menu-mobile.js - Menu Mobile Funcional
+class MobileMenu {
+    constructor() {
+        this.hamburger = document.querySelector('.hamburger');
+        this.navLinks = document.querySelector('.nav-links');
+        this.navContainer = document.querySelector('.nav-container');
+        this.init();
+    }
+
+    init() {
+        console.log('📱 Iniciando menu mobile...');
+        
+        if (this.hamburger) {
+            this.hamburger.addEventListener('click', () => this.toggleMenu());
+            console.log('✅ Hamburger encontrado e configurado');
+        } else {
+            console.log('❌ Hamburger não encontrado');
+        }
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => this.closeMenu());
+        });
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (!this.navContainer.contains(e.target) && this.navLinks.classList.contains('active')) {
+                this.closeMenu();
+            }
+        });
+
+        // Fechar menu ao redimensionar para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                this.closeMenu();
+            }
+        });
+
+        console.log('🎯 Menu mobile inicializado com sucesso!');
+    }
+
+    toggleMenu() {
+        console.log('🍔 Hamburger clicado!');
+        this.hamburger.classList.toggle('active');
+        this.navLinks.classList.toggle('active');
+        
+        // Prevenir scroll do body quando menu está aberto
+        if (this.navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+            console.log('📋 Menu ABERTO');
+        } else {
+            document.body.style.overflow = '';
+            console.log('📋 Menu FECHADO');
+        }
+    }
+
+    closeMenu() {
+        console.log('🚪 Fechando menu...');
+        this.hamburger.classList.remove('active');
+        this.navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Inicializar quando DOM estiver pronto
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('📄 DOM Carregado - Iniciando menu mobile...');
+    window.mobileMenu = new MobileMenu();
+    
+    // Debug: verificar elementos
+    console.log('🔍 Elementos do menu:');
+    console.log('- Hamburger:', document.querySelector('.hamburger'));
+    console.log('- Nav Links:', document.querySelector('.nav-links'));
+    console.log('- Nav Container:', document.querySelector('.nav-container'));
+});

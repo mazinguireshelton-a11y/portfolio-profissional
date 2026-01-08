@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelton Manuel | Engenharia & Tecnologia</title>
+    
+    <!-- Meta tags -->
+    <meta name="google" content="translate">
+    <meta name="description" content="Portfólio Shelton Manuel - Estudante, Programador, Líder, Atleta - Site em Português">
+    <meta name="keywords" content="portfólio, programador, estudante, Moçambique, tecnologia">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span>SM</span>
+            </div>
+            
+            <!-- Seletor de Idiomas -->
+            <div class="language-selector">
+                <button class="lang-btn" id="currentLang">
+                    <span class="flag">🇵🇹</span>
+                    <span class="lang-code">PT</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="lang-dropdown">
+                    <button class="lang-option" data-lang="pt">
+                        <span class="flag">🇵🇹</span>
+                        <span class="lang-name">Português</span>
+                    </button>
+                    <button class="lang-option" data-lang="en">
+                        <span class="flag">🇺🇸</span>
+                        <span class="lang-name">English</span>
+                    </button>
+                    <button class="lang-option" data-lang="es">
+                        <span class="flag">🇪🇸</span>
+                        <span class="lang-name">Español</span>
+                    </button>
+                    <button class="lang-option" data-lang="fr">
+                        <span class="flag">🇫🇷</span>
+                        <span class="lang-name">Français</span>
+                    </button>
+                    <button class="lang-option" data-lang="ru">
+                        <span class="flag">🇷🇺</span>
+                        <span class="lang-name">Русский</span>
+                    </button>
+                    <button class="lang-option" data-lang="zh">
+                        <span class="flag">🇨🇳</span>
+                        <span class="lang-name">中文</span>
+                    </button>
+                </div>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#sobre" data-key="nav.about">Sobre Mim</a></li>
+                <li><a href="#lideranca" data-key="nav.leadership">Liderança</a></li>
+                <li><a href="#programacao" data-key="nav.programming">Programação</a></li>
+                <li><a href="#cursos" data-key="nav.courses">Cursos</a></li>
+                <li><a href="#esportes" data-key="nav.sports">Esportes</a></li>
+            </ul>
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <div class="profile-card">
+                <img src="assets/images/perfil/foto-perfil.jpg" alt="Shelton Manuel" class="profile-img">
+                <h1 data-key="hero.title">Shelton Mazinguire Manuel</h1>
+                <p class="tagline" data-key="hero.tagline">Estudante | Programador junior | Líder | Atleta</p>
+                <div class="contact-info">
+                    <a href="mailto:shelton.mazinguire@yandex.com">
+                        <i class="fas fa-envelope"></i>
+                        shelton.mazinguire@yandex.com
+                    </a>
+                    <a href="mailto:mazinguireshelton@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        mazinguireshelton@gmail.com
+                    </a>
+                    <a href="tel:+258875962589">
+                        <i class="fas fa-phone"></i>
+                        +258 875962589
+                    </a>
+                    <span>
+                        <i class="fas fa-map-marker-alt"></i>
+                        Chimoio, Moçambique
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </header>
+
+    <!-- Sobre Mim Section -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="sobre-content">
+                <div class="sobre-text">
+                    <div class="intro-card">
+                        <h3 data-key="about.journey">🔄 Minha Jornada</h3>
+                        <p data-key="about.journeyText">Sou estudante do 12º ano em Chimoio, Moçambique, com paixão por tecnologia, engenharia e inovação. Busco constantemente aprender e aplicar conhecimentos em projetos práticos que possam impactar positivamente minha comunidade.</p>
+                    </div>
+                    
+                    <div class="education-card">
+                        <h3 data-key="about.education">🎓 Formação Acadêmica</h3>
+                        <div class="education-item">
+                            <h4 data-key="about.school">Escola Secundária Samora Machel</h4>
+                            <span class="year" data-key="about.year">2024 - 2025</span>
+                            <p data-key="about.grade">12º Ano - Ciências com biológia</p>
+                            <ul>
+                                <li data-key="about.subject1">Matemática</li>
+                                <li data-key="about.subject2">Física e Química</li>
+                                <li data-key="about.subject3">Programação Básica</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="skills-card">
+                        <h3 data-key="about.skills">🛠️ Competências</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-code"></i>
+                                <span>Programação</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-users"></i>
+                                <span>Liderança</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-basketball-ball"></i>
+                                <span>Handebol</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-language"></i>
+                                <span>Português/Inglês</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Inovação</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sobre-visual">
+                    <div class="stats-card">
+                        <div class="stat">
+                            <div class="stat-number" id="projetos-count">0</div>
+                            <div class="stat-label" data-key="about.projects">Projetos Concluídos</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="certificados-count">0</div>
+                            <div class="stat-label" data-key="about.certificates">Certificados</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="experiencia-count">0</div>
+                            <div class="stat-label" data-key="about.experience">Anos de Experiência</div>
+                        </div>
+                    </div>
+                    
+                    <div class="goals-card">
+                        <h3 data-key="about.goals">🎯 Objetivos</h3>
+                        <ul>
+                            <li data-key="about.goal1">Graduar-me em Engenharia Mecânica</li>
+                            <li data-key="about.goal2">Desenvolver soluções tecnológicas para Moçambique</li>
+                            <li data-key="about.goal3">Contribuir para o desenvolvimento industrial</li>
+                            <li data-key="about.goal4">Inspirar jovens na área de tecnologia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liderança Section -->
+    <section id="lideranca" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Liderança - Young Life</h2>
+            <div class="lideranca-intro">
+                <h3 data-key="leadership.journey">🌟 Minha Jornada de Liderança</h3>
+                <p data-key="leadership.journeyText">Atuação como líder juvenil na Young Life Moçambique, coordenando atividades, mentorando jovens e desenvolvendo habilidades de comunicação e trabalho em equipe.</p>
+            </div>
+
+            <div class="atividades-grid">
+                <div class="atividade-card">
+                    <div class="atividade-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 data-key="leadership.coordination">Coordenação de Grupos</h4>
+                    <p data-key="leadership.coordinationText">Liderança de grupos juvenis com foco no desenvolvimento pessoal e comunitário</p>
+                </div>
+                
+                <div class="atividade-card">
+                    <div class="atividade-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h4 data-key="leadership.mentoring">Mentoria</h4>
+                    <p data-key="leadership.mentoringText">Orientação e apoio a jovens em suas jornadas educacionais e pessoais</p>
+                </div>
+                
+                <div class="atividade-card">
+                    <div class="atividade-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4 data-key="leadership.events">Organização de Eventos</h4>
+                    <p data-key="leadership.eventsText">Planejamento e execução de atividades recreativas e educativas</p>
+                </div>
+            </div>
+
+            <!-- Galeria Young Life -->
+            <div class="galeria-section">
+                <h3 data-key="leadership.gallery">📸 Galeria - Young Life</h3>
+                <div id="youngLifeGallery">
+                    <div style="text-align: center; padding: 40px; color: #666;">
+                        <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+                        <p>Carregando galeria...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programação Section -->
+    <section id="programacao" class="section">
+        <div class="container">
+            <h2 class="section-title">Programação & Projetos</h2>
+            
+            <div class="tech-stack">
+                <h3 data-key="programming.tech">💻 Tecnologias que Utilizo</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-python"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js-square"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-microchip"></i>
+                        <span>Arduino</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-robot"></i>
+                        <span>Tinkercad</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML/CSS</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-git-alt"></i>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projetos GitHub -->
+            <div class="projetos-section">
+                <h3 data-key="programming.projects">🚀 Meus Projetos no GitHub</h3>
+                <div class="projetos-grid" id="projetosGitHub">
+                    <!-- Projetos carregados via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Links GitHub -->
+            <div class="github-links">
+                <h3 data-key="programming.github">🔗 Meu GitHub</h3>
+                <div class="github-stats">
+                    <a href="https://github.com/mazinguireshelton-a11y" class="github-btn" target="_blank" data-key="programming.visit">
+                        <i class="fab fa-github"></i>
+                        Visitar Meu GitHub
+                    </a>
+                    <div class="stats">
+                        <span class="stat" data-key="programming.repos">Repositórios: <strong id="repoCount">0</strong></span>
+                        <span class="stat" data-key="programming.followers">Seguidores: <strong id="followersCount">0</strong></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cursos Section -->
+    <section id="cursos" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Cursos & Certificações</h2>
+            
+            <div class="cursos-header">
+                <h3 data-key="courses.header">📚 Cursos do Alisson que Estou Fazendo</h3>
+                <p data-key="courses.subtitle">Desenvolvimento contínuo através de cursos online para aprimorar minhas habilidades técnicas</p>
+            </div>
+
+            <div class="cursos-grid" id="cursosGrid">
+                <!-- Cursos carregados via JavaScript -->
+            </div>
+
+            <!-- Certificados -->
+            <div class="certificados-section">
+                <h3 data-key="courses.certificates">🏆 Meus Certificados</h3>
+                <div class="certificados-grid" id="certificadosGrid">
+                    <!-- Certificados carregados via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Esportes Section -->
+    <section id="esportes" class="section">
+        <div class="container">
+            <h2 class="section-title">Esportes - Handebol</h2>
+            
+            <div class="esportes-intro">
+                <div class="esportes-content">
+                    <h3 data-key="sports.passion">🏐 Minha Paixão pelo Handebol</h3>
+                    <p data-key="sports.passionText">Prática regular de handebol competitivo, desenvolvendo disciplina, trabalho em equipe e espírito esportivo através de treinos e competições escolares.</p>
+                    
+                    <div class="esportes-stats">
+                        <div class="esporte-stat">
+                            <div class="esporte-number" id="anos-jogando">3</div>
+                            <div class="esporte-label" data-key="sports.years">Anos Jogando</div>
+                        </div>
+                        <div class="esporte-stat">
+                            <div class="esporte-number" id="jogos-competitivos">15</div>
+                            <div class="esporte-label" data-key="sports.games">Jogos Competitivos</div>
+                        </div>
+                        <div class="esporte-stat">
+                            <div class="esporte-number" id="premiacoes">5</div>
+                            <div class="esporte-label" data-key="sports.awards">Premiações</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="esportes-beneficios">
+                    <h4 data-key="sports.benefits">🎯 Benefícios do Esporte</h4>
+                    <ul>
+                        <li data-key="sports.benefit1">Disciplina e foco</li>
+                        <li data-key="sports.benefit2">Trabalho em equipe</li>
+                        <li data-key="sports.benefit3">Gestão do tempo</li>
+                        <li data-key="sports.benefit4">Resiliência mental</li>
+                        <li data-key="sports.benefit5">Saúde física</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Galeria de Esportes -->
+            <div class="galeria-esportes">
+                <h3 data-key="sports.moments">📸 Momentos do Handebol</h3>
+                <div class="galeria-grid" id="galeriaEsportes">
+                    <!-- Fotos carregadas via JavaScript -->
+                </div>
+            </div>
+
+            <!-- Vídeos -->
+            <div class="videos-section">
+                <h3 data-key="sports.videos">🎥 Vídeos dos Jogos</h3>
+                <div class="videos-grid" id="videosGrid">
+                    <!-- Vídeos carregados via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Shelton Mazinguire Manuel</h3>
+                    <p data-key="footer.tagline">Estudante | Programador | Líder | Atleta</p>
+                    <p data-key="footer.mission">Transformando paixão em projetos concretos</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 data-key="footer.connect">Conecte-se Comigo</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/mazinguireshelton-a11y" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:shelton.mazinguire@yandex.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shelton-mazinguire-88b461398?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sheltonmazinguire?igsh=NG93OWIzZWhpMjhm">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4 data-key="footer.contact">Contato</h4>
+                    <p><i class="fas fa-phone"></i> +258 875962589</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Chimoio, Moçambique</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p data-key="footer.rights">&copy; 2025 Shelton Mazinguire Manuel. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts na ORDEM CORRETA -->
+    <script src="js/translations.js"></script> 
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/contadores.js"></script>
+    <script src="js/galeria.js"></script>
+    <script src="js/projetos.js"></script>
+</body>
+</html>

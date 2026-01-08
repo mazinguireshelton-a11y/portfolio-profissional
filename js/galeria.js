@@ -1,9 +1,10 @@
-// js/galeria.js - DEFINITIVE GALLERY
+// js/galeria.js - YOUNG LIFE GALLERY WITH VIDEO MODAL
 console.log("🚀 YOUNG LIFE GALLERY STARTED!");
 
 class YoungLifeGallery {
     constructor() {
         this.photos = [];
+        this.videos = [];  // Adicionando array de vídeos
         this.currentCategory = 'all';
         this.init();
     }
@@ -11,9 +12,11 @@ class YoungLifeGallery {
     init() {
         console.log("🎯 Initializing gallery...");
         this.loadPhotos();
+        this.loadVideos();  // Carregar vídeos
         this.createInterface();
         this.renderCategories();
         this.renderGallery();
+        this.renderVideos();  // Renderizar vídeos separadamente
         console.log("✅ Gallery ready!");
     }
 
@@ -21,9 +24,6 @@ class YoungLifeGallery {
         this.photos = [
             // YOUTH CLUB
             { id: 1, src: 'assets/images/lideranca/clube-jovens/1760900215546.jpg', title: 'Youth Club Meeting', category: 'clube-jovens' },
-            { id: 2, src: 'assets/images/lideranca/clube-jovens/1760900217415.jpg', title: 'Group Activities', category: 'clube-jovens' },
-            { id: 3, src: 'assets/images/lideranca/clube-jovens/IMG_20250928_192956_706.webp', title: 'Discussion and Sharing', category: 'clube-jovens' },
-            { id: 4, src: 'assets/images/lideranca/clube-jovens/1760900211523.jpg', title: 'Moment of Reflection', category: 'clube-jovens' },
             { id: 5, src: 'assets/images/lideranca/clube-jovens/1760900206345.jpg', title: 'Member Integration', category: 'clube-jovens' },
             
             // CAMPING 1
@@ -35,7 +35,6 @@ class YoungLifeGallery {
             { id: 11, src: 'assets/images/lideranca/acampamento/1760900641987.jpg', title: 'Recreational Activities', category: 'acampamento1' },
             
             // CAMPING 2
-            { id: 12, src: 'assets/images/lideranca/acampamento2/1760900586249.jpg', title: 'Second Camping', category: 'acampamento2' },
             { id: 13, src: 'assets/images/lideranca/acampamento2/1760900582432.jpg', title: 'Group Dynamics', category: 'acampamento2' },
             { id: 14, src: 'assets/images/lideranca/acampamento2/1760900601605.jpg', title: 'Camp Closing', category: 'acampamento2' },
             
@@ -43,6 +42,20 @@ class YoungLifeGallery {
             { id: 15, src: 'assets/images/lideranca/graduacao/FB_IMG_1730052671087_1.jpg', title: 'Graduation Ceremony', category: 'graduacao' }
         ];
         console.log(`📸 ${this.photos.length} photos loaded`);
+    }
+
+    loadVideos() {
+        this.videos = [
+            { 
+                id: 1, 
+                src: 'assets/videos/lideranca/graduacao/FDownloader_Net_AQN1iVdhc2dCuf65M4PBbWLWctYtXvdDqqAgql5OAvnGAAhAJYw5LXqs2RZ8dtafW21KtpWLXca18l5FPZh_3Sh_360p_SD_V1.mp4',
+                thumbnail: 'assets/images/lideranca/graduacao/FB_IMG_1730052671087_1.jpg',
+                title: 'Celebration Moment',
+                description: 'Special video of the graduation ceremony and celebration of our achievements in Young Life',
+                category: 'graduacao'
+            }
+        ];
+        console.log(`🎥 ${this.videos.length} videos loaded`);
     }
 
     createInterface() {
@@ -66,22 +79,55 @@ class YoungLifeGallery {
                 <div class="photos-grid" id="photosGrid"></div>
             </div>
 
-            <div class="video-section">
-                <h3>🎥 Special Video</h3>
-                <div class="video-container">
-                    <video controls poster="assets/images/lideranca/graduacao/FB_IMG_1730052671087_1.jpg">
-                        <source src="assets/videos/lideranca/graduacao/FDownloader_Net_AQN1iVdhc2dCuf65M4PBbWLWctYtXvdDqqAgql5OAvnGAAhAJYw5LXqs2RZ8dtafW21KtpWLXca18l5FPZh_3Sh_360p_SD_V1.mp4" type="video/mp4">
-                        <p>Your browser does not support the video element.</p>
-                    </video>
-                    <div class="video-info">
-                        <h4>Celebration Moment</h4>
-                        <p>Special video of the graduation ceremony and celebration of our achievements in Young Life</p>
+            <!-- Seção de Vídeos separada -->
+            <div class="videos-section" id="youngLifeVideosSection">
+                <h3>🎥 Special Videos</h3>
+                <div class="videos-grid" id="youngLifeVideosGrid">
+                    <div class="loading-state">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <p>Loading videos...</p>
                     </div>
                 </div>
             </div>
         `;
 
+        // Criar modal para vídeos
+        this.createVideoModal();
         console.log("✅ Interface created!");
+    }
+
+    createVideoModal() {
+        // Remove existing modal
+        const existingModal = document.querySelector('.yl-video-modal');
+        if (existingModal) existingModal.remove();
+
+        const modal = document.createElement('div');
+        modal.className = 'yl-video-modal';
+        modal.innerHTML = `
+            <div class="modal-content">
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+                <div class="modal-media"></div>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        // Event listeners
+        modal.querySelector('.close-modal').addEventListener('click', () => {
+            this.closeVideoModal();
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                this.closeVideoModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                this.closeVideoModal();
+            }
+        });
     }
 
     renderCategories() {
@@ -93,7 +139,7 @@ class YoungLifeGallery {
             { id: 'clube-jovens', name: 'Youth Club', count: this.photos.filter(f => f.category === 'clube-jovens').length, color: '#e53e3e' },
             { id: 'acampamento1', name: 'Camping 1', count: this.photos.filter(f => f.category === 'acampamento1').length, color: '#38a169' },
             { id: 'acampamento2', name: 'Camping 2', count: this.photos.filter(f => f.category === 'acampamento2').length, color: '#d69e2e' },
-            { id: 'graduacao', name: 'Graduation', count: this.photos.filter(f => f.category === 'graduacao').length, color: '#805ad5' }
+            { id: 'graduacao', name: 'Graduation', count: this.photos.filter(f => f.category === 'graduacao').length + this.videos.filter(v => v.category === 'graduacao').length, color: '#805ad5' }
         ];
 
         container.innerHTML = categories.map(cat => `
@@ -102,13 +148,50 @@ class YoungLifeGallery {
                  style="border-left: 4px solid ${cat.color}">
                 <div class="category-info">
                     <h3>${cat.name}</h3>
-                    <span class="photo-count">${cat.count} photos</span>
+                    <span class="photo-count">${cat.count} items</span>
                 </div>
                 <div class="category-arrow">→</div>
             </div>
         `).join('');
 
         console.log("✅ Categories rendered!");
+    }
+
+    renderVideos() {
+        const container = document.getElementById('youngLifeVideosGrid');
+        if (!container) return;
+
+        if (this.videos.length === 0) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-video-slash"></i>
+                    <p>No videos available yet</p>
+                </div>
+            `;
+            return;
+        }
+
+        container.innerHTML = this.videos.map(video => `
+            <div class="video-card" onclick="window.galeria.openVideo(${video.id})">
+                <div class="video-thumbnail">
+                    <img src="${video.thumbnail}" 
+                         alt="${video.title}"
+                         onerror="this.src='assets/images/placeholder-video.jpg'">
+                    <div class="play-button">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+                <div class="video-info">
+                    <h5>${video.title}</h5>
+                    <p>${video.description}</p>
+                    <span class="video-duration">
+                        <i class="fas fa-clock"></i> Click to watch
+                    </span>
+                </div>
+            </div>
+        `).join('');
+
+        console.log("✅ Videos rendered!");
     }
 
     filterByCategory(category) {
@@ -126,9 +209,19 @@ class YoungLifeGallery {
             ? this.photos 
             : this.photos.filter(photo => photo.category === this.currentCategory);
 
+        if (filteredPhotos.length === 0) {
+            container.innerHTML = `
+                <div class="empty-state">
+                    <i class="fas fa-images"></i>
+                    <p>No photos in this category</p>
+                </div>
+            `;
+            return;
+        }
+
         container.innerHTML = filteredPhotos.map(photo => {
             return `
-            <div class="photo-card" onclick="window.galeria.openModal(${photo.id})">
+            <div class="photo-card" onclick="window.galeria.openPhotoModal(${photo.id})">
                 <div class="photo-image">
                     <img src="${photo.src}" alt="${photo.title}" 
                          onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
@@ -162,7 +255,60 @@ class YoungLifeGallery {
         return names[category] || category;
     }
 
-    openModal(photoId) {
+    openVideo(videoId) {
+        const video = this.videos.find(v => v.id === videoId);
+        if (!video) return;
+
+        const modal = document.querySelector('.yl-video-modal');
+        const mediaContainer = modal.querySelector('.modal-media');
+        
+        // Mostra estado de carregamento
+        mediaContainer.innerHTML = `
+            <div class="loading-state" style="padding: 3rem;">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading video...</p>
+            </div>
+        `;
+        modal.classList.add('active');
+
+        // Verifica se o vídeo existe
+        this.checkFileExists(video.src).then(exists => {
+            if (!exists) {
+                mediaContainer.innerHTML = `
+                    <div class="empty-state" style="padding: 3rem;">
+                        <i class="fas fa-exclamation-triangle" style="color: #ff6b6b; font-size: 3rem;"></i>
+                        <h3 style="color: #1a365d; margin: 1rem 0;">Video Not Available</h3>
+                        <p style="color: #718096;">The video file is not available.</p>
+                        <p style="color: #94a3b8; font-size: 0.875rem; margin-top: 1rem;">
+                            Check the path: ${video.src}
+                        </p>
+                    </div>
+                `;
+            } else {
+                mediaContainer.innerHTML = `
+                    <div class="video-wrapper">
+                        <video controls autoplay playsinline>
+                            <source src="${video.src}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="modal-info">
+                        <h3>${video.title}</h3>
+                        <p>${video.description}</p>
+                    </div>
+                `;
+                
+                const videoElement = mediaContainer.querySelector('video');
+                if (videoElement) {
+                    videoElement.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                    });
+                }
+            }
+        });
+    }
+
+    openPhotoModal(photoId) {
         const photo = this.photos.find(f => f.id === photoId);
         if (!photo) return;
 
@@ -174,7 +320,7 @@ class YoungLifeGallery {
         modal.className = 'photo-modal';
         modal.innerHTML = `
             <div class="modal-content">
-                <span class="close-modal" onclick="window.galeria.closeModal()">&times;</span>
+                <span class="close-modal" onclick="window.galeria.closePhotoModal()">&times;</span>
                 <img src="${photo.src}" alt="${photo.title}">
                 <div class="modal-info">
                     <h3>${photo.title}</h3>
@@ -190,25 +336,52 @@ class YoungLifeGallery {
         // Close when clicking outside
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
-                this.closeModal();
+                this.closePhotoModal();
             }
         });
 
         // Close with ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                this.closeModal();
+                this.closePhotoModal();
             }
         });
     }
 
-    closeModal() {
+    closeVideoModal() {
+        const modal = document.querySelector('.yl-video-modal');
+        if (!modal) return;
+
+        // Pause any playing video
+        const video = modal.querySelector('video');
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.querySelector('.modal-media').innerHTML = '';
+        }, 300);
+    }
+
+    closePhotoModal() {
         const modal = document.querySelector('.photo-modal');
         if (modal) modal.remove();
     }
+
+    checkFileExists(url) {
+        return new Promise(resolve => {
+            const xhr = new XMLHttpRequest();
+            xhr.open('HEAD', url);
+            xhr.onload = () => resolve(xhr.status === 200);
+            xhr.onerror = () => resolve(false);
+            xhr.send();
+        });
+    }
 }
 
-// Add exact CSS that you sent
+// Add CSS atualizado
 const galleryCSS = `
     /* ===== YOUNG LIFE GALLERY ===== */
     .gallery-header {
@@ -398,52 +571,194 @@ const galleryCSS = `
         color: #6b46c1;
     }
     
-    /* Video Section */
-    .video-section {
+    /* Video Section - como no Project Smile */
+    .videos-section {
         margin-top: 4rem;
         padding-top: 3rem;
         border-top: 2px solid #e2e8f0;
     }
     
-    .video-section h3 {
+    .videos-section h3 {
         text-align: center;
         margin-bottom: 2rem;
         color: #1a365d;
         font-size: 1.5rem;
     }
     
-    .video-container {
-        max-width: 800px;
-        margin: 0 auto;
+    .videos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+    
+    .video-card {
         background: white;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
     }
     
-    .video-container video {
+    .video-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    
+    .video-thumbnail {
+        position: relative;
+        height: 160px;
+        overflow: hidden;
+    }
+    
+    .video-thumbnail img {
         width: 100%;
-        height: auto;
-        display: block;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .video-card:hover .video-thumbnail img {
+        transform: scale(1.05);
+    }
+    
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.7);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.25rem;
+        transition: all 0.3s ease;
+    }
+    
+    .video-card:hover .play-button {
+        background: rgba(26, 54, 93, 0.9);
+        transform: translate(-50%, -50%) scale(1.1);
     }
     
     .video-info {
-        padding: 1.5rem;
+        padding: 1rem;
     }
     
-    .video-info h4 {
-        margin: 0 0 1rem 0;
+    .video-info h5 {
         color: #1a365d;
-        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
     }
     
     .video-info p {
-        color: #666;
-        line-height: 1.6;
-        margin: 0;
+        color: #64748b;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        margin-bottom: 0.5rem;
     }
     
-    /* Modal */
+    .video-duration {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.25rem;
+        color: #94a3b8;
+        font-size: 0.8rem;
+    }
+    
+    /* Modal para vídeos */
+    .yl-video-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .yl-video-modal.active {
+        display: flex;
+        opacity: 1;
+    }
+    
+    .yl-video-modal .modal-content {
+        position: relative;
+        max-width: 90%;
+        max-height: 90%;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    
+    .yl-video-modal .close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 10;
+        transition: background 0.3s ease;
+    }
+    
+    .yl-video-modal .close-modal:hover {
+        background: rgba(26, 54, 93, 0.9);
+    }
+    
+    .yl-video-modal .modal-media {
+        max-width: 100%;
+        max-height: 70vh;
+        overflow: auto;
+    }
+    
+    .yl-video-modal .modal-media video {
+        width: 100%;
+        max-height: 60vh;
+        object-fit: contain;
+    }
+    
+    .yl-video-modal .modal-info {
+        padding: 1.5rem;
+        background: white;
+        border-top: 1px solid #e2e8f0;
+    }
+    
+    .yl-video-modal .modal-info h3 {
+        color: #1a365d;
+        margin-bottom: 0.5rem;
+    }
+    
+    .yl-video-modal .modal-info p {
+        color: #64748b;
+        line-height: 1.5;
+    }
+    
+    .video-wrapper {
+        width: 100%;
+        background: #000;
+    }
+    
+    .video-wrapper video {
+        width: 100%;
+        display: block;
+    }
+    
+    /* Modal para fotos (existente) */
     .photo-modal {
         position: fixed;
         top: 0;
@@ -458,7 +773,7 @@ const galleryCSS = `
         padding: 2rem;
     }
     
-    .modal-content {
+    .photo-modal .modal-content {
         position: relative;
         max-width: 90%;
         max-height: 90%;
@@ -467,14 +782,14 @@ const galleryCSS = `
         overflow: hidden;
     }
     
-    .modal-content img {
+    .photo-modal .modal-content img {
         width: 100%;
         height: auto;
         max-height: 70vh;
         object-fit: contain;
     }
     
-    .close-modal {
+    .photo-modal .close-modal {
         position: absolute;
         top: 1rem;
         right: 1rem;
@@ -491,20 +806,39 @@ const galleryCSS = `
         z-index: 10001;
     }
     
-    .modal-info {
+    .photo-modal .modal-info {
         padding: 1.5rem;
     }
     
-    .modal-info h3 {
+    .photo-modal .modal-info h3 {
         margin: 0 0 1rem 0;
         color: #1a365d;
         font-size: 1.3rem;
     }
     
-    .modal-meta {
+    .photo-modal .modal-meta {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    
+    /* Estados de loading e vazio */
+    .loading-state,
+    .empty-state {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        text-align: center;
+        color: #64748b;
+        grid-column: 1 / -1;
+    }
+    
+    .loading-state i,
+    .empty-state i {
+        font-size: 2rem;
+        margin-bottom: 1rem;
     }
     
     /* Responsiveness */
@@ -522,15 +856,20 @@ const galleryCSS = `
             height: 180px;
         }
         
-        .photo-info {
+        .videos-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .video-thumbnail {
+            height: 150px;
+        }
+        
+        .photo-info, .video-info {
             padding: 1rem;
         }
         
-        .video-info {
-            padding: 1rem;
-        }
-        
-        .modal-content {
+        .yl-video-modal .modal-content,
+        .photo-modal .modal-content {
             max-width: 95%;
             max-height: 95%;
         }
@@ -541,12 +880,17 @@ const galleryCSS = `
     }
     
     @media (max-width: 480px) {
-        .photos-grid {
+        .photos-grid,
+        .videos-grid {
             grid-template-columns: 1fr;
         }
         
         .photo-image {
             height: 200px;
+        }
+        
+        .video-thumbnail {
+            height: 140px;
         }
     }
 `;
@@ -558,6 +902,6 @@ document.head.appendChild(style);
 
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('📄 DOM Loaded - Starting gallery...');
+    console.log('📄 DOM Loaded - Starting Young Life gallery...');
     window.galeria = new YoungLifeGallery();
 });

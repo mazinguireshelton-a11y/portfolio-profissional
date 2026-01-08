@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shelton Manuel | Engenharia & Tecnologia</title>
+    
+    <!-- Meta Tags Essenciais -->
+    <meta name="google" content="translate">
+    <meta name="description" content="Shelton Manuel - Estudante, Programador Junior, Líder em Moçambique. Portfólio em múltiplos idiomas.">
+    <meta name="keywords" content="Shelton Manuel, portfólio, programador, Moçambique, estudante, engenharia, tecnologia">
+    <meta name="author" content="Shelton Mazinguire Manuel">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Shelton Manuel | Engenharia & Tecnologia">
+    <meta property="og:description" content="Estudante | Programador Junior | Líder - Moçambique">
+    <meta property="og:type" content="website">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon (opcional - adicione depois) -->
+    <!-- <link rel="icon" href="assets/favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="logo">
+                <span>SM</span>
+            </div>
+            
+            <!-- Language Selector -->
+            <div class="language-selector" style="position: relative; display: inline-block;">
+                <button class="lang-btn" id="universalLangBtn">
+                    <span class="flag">🇵🇹</span>
+                    <span class="lang-code">PT</span>
+                </button>
+                <div class="lang-dropdown">
+                    <button class="lang-option" data-language="pt">
+                        <span class="flag">🇵🇹</span>
+                        <span class="lang-name">Português</span>
+                    </button>
+                    <button class="lang-option" data-language="en">
+                        <span class="flag">🇺🇸</span>
+                        <span class="lang-name">English</span>
+                    </button>
+                    <button class="lang-option" data-language="es">
+                        <span class="flag">🇪🇸</span>
+                        <span class="lang-name">Español</span>
+                    </button>
+                    <button class="lang-option" data-language="fr">
+                        <span class="flag">🇫🇷</span>
+                        <span class="lang-name">Français</span>
+                    </button>
+                    <button class="lang-option" data-language="ru">
+                        <span class="flag">🇷🇺</span>
+                        <span class="lang-name">Русский</span>
+                    </button>
+                    <button class="lang-option" data-language="zh">
+                        <span class="flag">🇨🇳</span>
+                        <span class="lang-name">中文</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+                <li><a href="#sobre" data-lang="nav.about">Sobre Mim</a></li>
+                <li><a href="#lideranca" data-lang="nav.leadership">Liderança</a></li>
+                <li><a href="#programacao" data-lang="nav.programming">Programação</a></li>
+                <li><a href="#cursos" data-lang="nav.courses">Cursos</a></li>
+            </ul>
+            
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger" aria-label="Abrir menu" role="button" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <header class="hero" id="inicio">
+        <div class="hero-content">
+            <div class="profile-card">
+                <img src="assets/images/perfil/foto-perfil.jpg" 
+                     alt="Shelton Manuel - Foto de perfil" 
+                     class="profile-img"
+                     loading="eager">
+                <h1 data-lang="hero.title">Shelton Mazinguire Manuel</h1>
+                <p class="tagline" data-lang="hero.tagline">Estudante | Programador Junior | Líder</p>
+                
+                <div class="contact-info">
+                    <a href="mailto:shelton.mazinguire@yandex.com" aria-label="Enviar email para shelton.mazinguire@yandex.com">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        shelton.mazinguire@yandex.com
+                    </a>
+                    <a href="mailto:mazinguireshelton@gmail.com" aria-label="Enviar email para mazinguireshelton@gmail.com">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        mazinguireshelton@gmail.com
+                    </a>
+                    <a href="tel:+258875962589" aria-label="Ligar para +258 875962589">
+                        <i class="fas fa-phone" aria-hidden="true"></i>
+                        +258 875962589
+                    </a>
+                    <span>
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        Chimoio, Moçambique
+                    </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-down" aria-label="Rolar para baixo">
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </div>
+    </header>
+
+    <!-- ==================== SOBRE MIM ==================== -->
+    <section id="sobre" class="section" aria-labelledby="sobre-title">
+        <div class="container">
+            <h2 class="section-title" id="sobre-title" data-lang="about.title">Sobre Mim</h2>
+            
+            <div class="sobre-content">
+                <!-- Coluna Esquerda: Texto -->
+                <div class="sobre-text">
+                    <div class="intro-card">
+                        <h3 data-lang="about.journey">🔄 Minha Jornada</h3>
+                        <p data-lang="about.journeyText">Sou estudante do 12º ano em Chimoio, Moçambique, com paixão por tecnologia, engenharia e inovação. Busco constantemente aprender e aplicar conhecimentos em projetos práticos que possam impactar positivamente minha comunidade.</p>
+                    </div>
+                    
+                    <div class="education-card">
+                        <h3 data-lang="about.education">🎓 Formação Acadêmica</h3>
+                        <div class="education-item">
+                            <h4 data-lang="about.school">Escola Secundária Samora Machel</h4>
+                            <span class="year" data-lang="about.year">2024 - 2025</span>
+                            <p data-lang="about.grade">12º Ano - Ciências com Biologia</p>
+                            <ul>
+                                <li data-lang="about.subject1">Matemática</li>
+                                <li data-lang="about.subject2">Física e Química</li>
+                                <li data-lang="about.subject3">Programação Básica</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="skills-card">
+                        <h3 data-lang="about.skills">🛠️ Competências</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-code" aria-hidden="true"></i>
+                                <span>Programação</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                                <span>Liderança</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                                <span>Inovação</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-language" aria-hidden="true"></i>
+                                <span>Português/Inglês</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Coluna Direita: Estatísticas e Objetivos -->
+                <div class="sobre-visual">
+                    <div class="stats-card">
+                        <div class="stat">
+                            <div class="stat-number" id="projetos-count" aria-live="polite">0</div>
+                            <div class="stat-label" data-lang="about.projects">Projetos Concluídos</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="certificados-count" aria-live="polite">0</div>
+                            <div class="stat-label" data-lang="about.certificates">Certificados</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number" id="experiencia-count" aria-live="polite">0</div>
+                            <div class="stat-label" data-lang="about.experience">Anos de Experiência</div>
+                        </div>
+                    </div>
+                    
+                    <div class="goals-card">
+                        <h3 data-lang="about.goals">🎯 Objetivos</h3>
+                        <ul>
+                            <li data-lang="about.goal1">Graduar-me em Engenharia Mecânica</li>
+                            <li data-lang="about.goal2">Desenvolver soluções tecnológicas para Moçambique</li>
+                            <li data-lang="about.goal3">Contribuir para o desenvolvimento industrial</li>
+                            <li data-lang="about.goal4">Inspirar jovens na área de tecnologia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LIDERANÇA ==================== -->
+    <section id="lideranca" class="section bg-light" aria-labelledby="lideranca-title">
+        <div class="container">
+            <h2 class="section-title" id="lideranca-title" data-lang="leadership.title">Liderança - Young Life</h2>
+            
+            <div class="lideranca-intro">
+                <h3 data-lang="leadership.journey">🌟 Minha Jornada de Liderança</h3>
+                <p data-lang="leadership.journeyText">Atuação como líder juvenil na Young Life Moçambique, coordenando atividades, mentorando jovens e desenvolvendo habilidades de comunicação e trabalho em equipe.</p>
+            </div>
+
+            <!-- Atividades de Liderança -->
+            <div class="atividades-grid">
+                <div class="atividade-card">
+                    <div class="atividade-icon" aria-hidden="true">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 data-lang="leadership.coordination">Coordenação de Grupos</h4>
+                    <p data-lang="leadership.coordinationText">Liderança de grupos juvenis com foco no desenvolvimento pessoal e comunitário</p>
+                </div>
+                
+                <div class="atividade-card">
+                    <div class="atividade-icon" aria-hidden="true">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h4 data-lang="leadership.mentoring">Mentoria</h4>
+                    <p data-lang="leadership.mentoringText">Orientação e apoio a jovens em suas jornadas educacionais e pessoais</p>
+                </div>
+                
+                <div class="atividade-card">
+                    <div class="atividade-icon" aria-hidden="true">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4 data-lang="leadership.events">Organização de Eventos</h4>
+                    <p data-lang="leadership.eventsText">Planejamento e execução de atividades recreativas e educativas</p>
+                </div>
+            </div>
+
+            <!-- Galeria Young Life -->
+            <div class="galeria-section">
+                <h3 data-lang="leadership.gallery">📸 Galeria - Young Life</h3>
+                <div id="youngLifeGallery" aria-live="polite">
+                    <div class="loading-state">
+                        <i class="fas fa-spinner fa-spin" aria-hidden="true"></i>
+                        <p data-lang="loading">Carregando galeria...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROGRAMAÇÃO ==================== -->
+    <section id="programacao" class="section" aria-labelledby="programacao-title">
+        <div class="container">
+            <h2 class="section-title" id="programacao-title" data-lang="programming.title">Programação & Projetos</h2>
+            
+            <!-- Tech Stack -->
+            <div class="tech-stack">
+                <h3 data-lang="programming.tech">💻 Tecnologias que Utilizo</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-python" aria-hidden="true"></i>
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js-square" aria-hidden="true"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-microchip" aria-hidden="true"></i>
+                        <span>Arduino</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-robot" aria-hidden="true"></i>
+                        <span>Tinkercad</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-html5" aria-hidden="true"></i>
+                        <span>HTML/CSS</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-git-alt" aria-hidden="true"></i>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projetos GitHub -->
+            <div class="projetos-section">
+                <h3 data-lang="programming.projects">🚀 Meus Projetos no GitHub</h3>
+                <div class="projetos-grid" id="projetosGitHub" aria-live="polite">
+                    <!-- Projetos carregados via projetos.js -->
+                </div>
+            </div>
+
+            <!-- Links GitHub -->
+            <div class="github-links">
+                <h3 data-lang="programming.github">🔗 Meu GitHub</h3>
+                <div class="github-stats">
+                    <a href="https://github.com/mazinguireshelton-a11y" 
+                       class="github-btn" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Visitar perfil do GitHub">
+                        <i class="fab fa-github" aria-hidden="true"></i>
+                        <span data-lang="programming.visit">Visitar Meu GitHub</span>
+                    </a>
+                    <div class="stats">
+                        <span class="stat">
+                            <span data-lang="programming.repos">Repositórios:</span>
+                            <strong id="repoCount" aria-live="polite">0</strong>
+                        </span>
+                        <span class="stat">
+                            <span data-lang="programming.followers">Seguidores:</span>
+                            <strong id="followersCount" aria-live="polite">0</strong>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CURSOS ==================== -->
+    <section id="cursos" class="section bg-light" aria-labelledby="cursos-title">
+        <div class="container">
+            <h2 class="section-title" id="cursos-title" data-lang="courses.title">Cursos & Certificações</h2>
+            
+            <div class="cursos-header">
+                <h3 data-lang="courses.header">📚 Cursos do Alisson que Estou Fazendo</h3>
+                <p data-lang="courses.subtitle">Desenvolvimento contínuo através de cursos online para aprimorar minhas habilidades técnicas</p>
+            </div>
+
+            <!-- Grid de Cursos -->
+            <div class="cursos-grid" id="cursosGrid" aria-live="polite">
+                <!-- Cursos carregados via JavaScript -->
+            </div>
+
+            <!-- Certificados -->
+            <div class="certificados-section">
+                <h3 data-lang="courses.certificates">🏆 Meus Certificados</h3>
+                <div class="certificados-grid" id="certificadosGrid" aria-live="polite">
+                    <!-- Certificados carregados via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Informações Pessoais -->
+                <div class="footer-info">
+                    <h3>Shelton Mazinguire Manuel</h3>
+                    <p data-lang="footer.tagline">Estudante | Programador | Líder</p>
+                    <p data-lang="footer.mission">Transformando paixão em projetos concretos</p>
+                </div>
+                
+                <!-- Redes Sociais -->
+                <div class="footer-links">
+                    <h4 data-lang="footer.connect">Conecte-se Comigo</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/mazinguireshelton-a11y" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="GitHub">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                        </a>
+                        <a href="mailto:shelton.mazinguire@yandex.com" 
+                           aria-label="Email">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/shelton-mazinguire-88b461398" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="LinkedIn">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/sheltonmazinguire" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://wa.me/qr/ENZ3XAI5NHQBE1" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contato -->
+                <div class="footer-contact">
+                    <h4 data-lang="footer.contact">Contato</h4>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> +258 875962589</p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Chimoio, Moçambique</p>
+                </div>
+            </div>
+            
+            <!-- Rodapé Inferior -->
+            <div class="footer-bottom">
+                <p data-lang="footer.rights">&copy; 2025 Shelton Mazinguire Manuel. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- Ordem CRÍTICA: 1. Traduções, 2. Sistema, 3. Conteúdo -->
+    <script src="js/translations.js"></script>
+  <!--  <script src="js/lang.js"></script> -->
+    <script src="js/menu-mobile.js"></script>
+    <script src="js/contadores.js"></script>
+    <script src="js/galeria.js"></script>
+    <script src="js/projetos.js"></script>
+    
+    <!-- ==================== SISTEMA DE TESTE ==================== -->
+    <script>
+        // TESTE PROFISSIONAL - Verifica TODOS os sistemas
+        (function() {
+            'use strict';
+            
+            console.log('🧪 INICIANDO TESTE DE SISTEMAS MULTILÍNGUES');
+            console.log('='.repeat(60));
+            
+            // Aguarda tudo carregar
+            setTimeout(() => {
+                // 1. VERIFICAÇÃO DE SISTEMAS
+                console.group('🔍 1. SISTEMAS CARREGADOS');
+                const systems = {
+                    'translationManager (estático)': !!window.translationManager,
+                    'DynamicTranslator (dinâmico)': !!window.DynamicTranslator,
+                    'LangManager (alias)': !!window.LangManager,
+                    'changeLanguage (função global)': typeof window.changeLanguage === 'function',
+                    'setLang (função global)': typeof window.setLang === 'function'
+                };
+                
+                Object.entries(systems).forEach(([name, loaded]) => {
+                    console.log(`${loaded ? '✅' : '❌'} ${name}: ${loaded ? 'SIM' : 'NÃO'}`);
+                });
+                console.groupEnd();
+                
+                // 2. VERIFICAÇÃO DE IDIOMA
+                console.group('🌍 2. ESTADO ATUAL DO IDIOMA');
+                if (window.translationManager) {
+                    console.log(`📌 translationManager: ${window.translationManager.currentLang}`);
+                }
+                if (window.DynamicTranslator) {
+                    console.log(`📌 DynamicTranslator: ${window.DynamicTranslator.getLanguage()}`);
+                }
+                console.log(`📌 localStorage: ${localStorage.getItem('site-lang') || 'Não definido'}`);
+                console.log(`📌 HTML lang: ${document.documentElement.lang}`);
+                console.groupEnd();
+                
+                // 3. VERIFICAÇÃO DE ELEMENTOS
+                console.group('🏷️ 3. ELEMENTOS NA PÁGINA');
+                console.log(`📊 data-lang (dinâmico): ${document.querySelectorAll('[data-lang]').length}`);
+                console.log(`📊 data-key (estático - deve ser 0): ${document.querySelectorAll('[data-key]').length}`);
+                console.log(`📊 data-language (botões): ${document.querySelectorAll('[data-language]').length}`);
+                console.groupEnd();
+                
+                // 4. TESTE DE TRADUÇÃO DINÂMICA
+                console.group('🚀 4. TESTE DE TRADUÇÃO DINÂMICA');
+                
+                // Cria elemento de teste
+                const testElement = document.createElement('div');
+                testElement.innerHTML = `
+                    <div style="position: fixed; top: 10px; right: 10px; background: rgba(0,0,0,0.9); color: white; padding: 15px; border-radius: 8px; z-index: 99999; font-family: monospace; max-width: 300px;">
+                        <h4 style="margin: 0 0 10px 0; color: #4CAF50;">🧪 TESTE DINÂMICO</h4>
+                        <div style="margin-bottom: 5px;">
+                            <span style="color: #FF9800;">Followers:</span> 
+                            <span data-lang="followers">[TESTE]</span>
+                        </div>
+                        <div style="margin-bottom: 5px;">
+                            <span style="color: #FF9800;">View Code:</span>
+                            <button data-lang="view_code" style="background: #2196F3; color: white; border: none; padding: 3px 8px; border-radius: 4px; margin-left: 5px;">[TESTE]</button>
+                        </div>
+                        <div style="margin-bottom: 5px;">
+                            <span style="color: #FF9800;">Planned:</span>
+                            <span class="badge" data-lang="planned" style="background: #FF5722; padding: 2px 6px; border-radius: 3px; font-size: 12px;">[TESTE]</span>
+                        </div>
+                        <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #333;">
+                            <small style="color: #aaa;">Idioma: <span id="test-lang">${window.translationManager?.currentLang || 'pt'}</span></small>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(testElement);
+                
+                // Aguarda MutationObserver processar
+                setTimeout(() => {
+                    const dynamicElements = testElement.querySelectorAll('[data-lang]');
+                    console.log(`📝 Elementos de teste criados: ${dynamicElements.length}`);
+                    
+                    dynamicElements.forEach((el, index) => {
+                        const key = el.getAttribute('data-lang');
+                        const text = el.textContent || el.innerText;
+                        const isTranslated = !text.includes('[TESTE]') && text.trim() !== '';
+                        
+                        console.log(`   ${isTranslated ? '✅' : '❌'} ${key}: "${text}"`);
+                    });
+                    
+                    console.log(`📌 Sistema dinâmico: ${dynamicElements.length > 0 ? 'ATIVO' : 'INATIVO'}`);
+                }, 500);
+                console.groupEnd();
+                
+                // 5. TESTE DE INTEGRAÇÃO
+                console.group('🔗 5. TESTE DE INTEGRAÇÃO');
+                
+                // Testa sincronização entre sistemas
+                if (window.translationManager && window.DynamicTranslator) {
+                    console.log('🔄 Testando sincronização...');
+                    
+                    // Salva estado original
+                    const originalLang = window.translationManager.currentLang;
+                    
+                    // Testa mudança via translationManager
+                    setTimeout(() => {
+                        console.log(`🔸 Mudando para EN via translationManager...`);
+                        window.translationManager.changeLanguage('en');
+                        
+                        setTimeout(() => {
+                            const lang1 = window.translationManager.currentLang;
+                            const lang2 = window.DynamicTranslator.getLanguage();
+                            const syncOK = lang1 === lang2;
+                            
+                            console.log(`   translationManager: ${lang1}`);
+                            console.log(`   DynamicTranslator: ${lang2}`);
+                            console.log(`   ${syncOK ? '✅' : '❌'} Sincronização: ${syncOK ? 'OK' : 'FALHOU'}`);
+                            
+                            // Volta para original
+                            setTimeout(() => {
+                                window.translationManager.changeLanguage(originalLang);
+                                console.log(`↩️ Idioma restaurado para: ${originalLang}`);
+                                console.groupEnd();
+                                
+                                // 6. RESULTADO FINAL
+                                console.log('='.repeat(60));
+                                console.log('📊 RESUMO DO TESTE:');
+                                
+                                const summary = {
+                                    sistemas: Object.values(systems).filter(Boolean).length + '/' + Object.keys(systems).length,
+                                    elementosEstaticos: document.querySelectorAll('[data-key]').length,
+                                    elementosDinamicos: document.querySelectorAll('[data-lang]').length,
+                                    integracao: syncOK ? '✅ OK' : '❌ FALHOU',
+                                    idiomaAtual: originalLang
+                                };
+                                
+                                Object.entries(summary).forEach(([key, value]) => {
+                                    console.log(`   ${key}: ${value}`);
+                                });
+                                
+                                // Mostra popup visual
+                                showTestResult(summary);
+                                
+                            }, 1000);
+                        }, 500);
+                    }, 1000);
+                } else {
+                    console.log('❌ Sistemas insuficientes para teste de integração');
+                    console.groupEnd();
+                }
+                
+            }, 1000); // Aguarda 1s para tudo carregar
+            
+            // Função para mostrar resultado visual
+            function showTestResult(summary) {
+                const resultBox = document.createElement('div');
+                resultBox.style.cssText = `
+                    position: fixed;
+                    bottom: 20px;
+                    left: 20px;
+                    background: rgba(0, 0, 0, 0.95);
+                    color: white;
+                    padding: 20px;
+                    border-radius: 10px;
+                    z-index: 10000;
+                    font-family: 'Inter', sans-serif;
+                    max-width: 350px;
+                    border-left: 5px solid #4CAF50;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+                `;
+                
+                resultBox.innerHTML = `
+                    <h3 style="margin: 0 0 15px 0; color: #4CAF50; display: flex; align-items: center; gap: 10px;">
+                        <span>🧪</span> TESTE DE SISTEMAS
+                    </h3>
+                    <div style="margin-bottom: 10px;">
+                        <span style="color: #FF9800;">Sistemas:</span> ${summary.sistemas}
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <span style="color: #FF9800;">Elementos estáticos:</span> ${summary.elementosEstaticos}
+                    </div>
+                    <div style="margin-bottom: 10px;">
+                        <span style="color: #FF9800;">Elementos dinâmicos:</span> ${summary.elementosDinamicos}
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <span style="color: #FF9800;">Integração:</span> ${summary.integracao}
+                    </div>
+                    <div style="border-top: 1px solid #333; padding-top: 10px; font-size: 14px; color: #aaa;">
+                        Idioma atual: <strong>${summary.idiomaAtual.toUpperCase()}</strong>
+                        <br>
+                        <small>Teste concluído - Verifique o Console (F12)</small>
+                    </div>
+                    <button id="close-test" style="
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+                        background: transparent;
+                        border: none;
+                        color: #fff;
+                        cursor: pointer;
+                        font-size: 16px;
+                    ">×</button>
+                `;
+                
+                document.body.appendChild(resultBox);
+                
+                // Botão para fechar
+                document.getElementById('close-test').addEventListener('click', () => {
+                    resultBox.remove();
+                    // Remove também o elemento de teste dinâmico
+                    const testElement = document.querySelector('[data-lang="followers"]')?.closest('div');
+                    if (testElement && testElement.style.position === 'fixed') {
+                        testElement.remove();
+                    }
+                });
+                
+                // Fecha automaticamente após 15 segundos
+                setTimeout(() => {
+                    if (document.body.contains(resultBox)) {
+                        resultBox.remove();
+                    }
+                }, 15000);
+            }
+            
+            // Monitora cliques nos botões de idioma
+            document.addEventListener('click', function(event) {
+                const langBtn = event.target.closest('[data-language]');
+                if (langBtn) {
+                    const lang = langBtn.getAttribute('data-language');
+                    console.log(`🖱️ Botão de idioma clicado: ${lang}`);
+                    
+                    // Verifica após 500ms
+                    setTimeout(() => {
+                        console.log(`📊 Estado após clique:`);
+                        if (window.translationManager) {
+                            console.log(`   translationManager: ${window.translationManager.currentLang}`);
+                        }
+                        if (window.DynamicTranslator) {
+                            console.log(`   DynamicTranslator: ${window.DynamicTranslator.getLanguage()}`);
+                        }
+                        
+                        // Atualiza display de teste
+                        const testLangSpan = document.getElementById('test-lang');
+                        if (testLangSpan) {
+                            testLangSpan.textContent = window.translationManager?.currentLang || 'pt';
+                        }
+                    }, 500);
+                }
+            });
+            
+        })();
+    </script>
+</body>
+</html>

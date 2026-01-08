@@ -45,6 +45,25 @@ const TRANSLATIONS = {
         "leadership.eventsText": "Planejamento e execução de atividades recreativas e educativas",
         "leadership.gallery": "📸 Galeria - Young Life",
 
+        // Social Projects - NOVAS TRADUÇÕES
+        "nav.projects": "Projetos Sociais",
+        "projects.smile.title": "Projeto Sorriso",
+        "projects.smile.subtitle": "Projeto social estudantil em parceria com Young Life",
+        "projects.smile.desc1": "O <strong>Projeto Sorriso</strong> é uma iniciativa comunitária criada por estudantes para ajudar pessoas carentes através de <strong>doações</strong> e <strong>distribuição de refeições</strong>.",
+        "projects.smile.desc2": "O projeto opera em colaboração com a <strong>Young Life Moçambique</strong>, focando em assistência prática e solidariedade para a comunidade de Chimoio.",
+        "projects.smile.activities": "O Que Fazemos",
+        "projects.smile.activity1.title": "Distribuição de Refeições",
+        "projects.smile.activity1.desc": "Fornecimento de refeições para famílias carentes",
+        "projects.smile.activity2.title": "Coleta de Doações",
+        "projects.smile.activity2.desc": "Coleta de alimentos, roupas e suprimentos básicos",
+        "projects.smile.activity3.title": "Eventos de Solidariedade",
+        "projects.smile.activity3.desc": "Organização de atividades de apoio comunitário",
+        "projects.smile.activity4.title": "Engajamento Comunitário",
+        "projects.smile.activity4.desc": "Envolvimento de jovens locais em ações sociais",
+        "projects.smile.upcomingEvent": "Próximo Evento",
+        "projects.smile.galleryTitle": "Momentos do Projeto",
+        "projects.smile.partnership": "Em Colaboração com",
+
         // Programação
         "programming.tech": "💻 Tecnologias que Utilizo",
         "programming.projects": "🚀 Meus Projetos no GitHub",
@@ -78,7 +97,8 @@ const TRANSLATIONS = {
         "footer.mission": "Transformando paixão em projetos concretos",
         "footer.connect": "Conecte-se Comigo",
         "footer.contact": "Contato",
-        "footer.rights": "© 2025 Shelton Mazinguire Manuel. Todos os direitos reservados."
+        "footer.rights": "© 2025 Shelton Mazinguire Manuel. Todos os direitos reservados.",
+        "footer.diverse": "Engenharia | Tecnologia | Impacto Social | Liderança"
     },
 
     en: {
@@ -120,6 +140,25 @@ const TRANSLATIONS = {
         "leadership.eventsText": "Planning and execution of recreational and educational activities",
         "leadership.gallery": "📸 Young Life Gallery",
 
+        // Social Projects - NOVAS TRADUÇÕES
+        "nav.projects": "Social Projects",
+        "projects.smile.title": "Project Smile",
+        "projects.smile.subtitle": "Student-led social project in partnership with Young Life",
+        "projects.smile.desc1": "<strong>Project Smile</strong> is a community initiative created by students to help people in need through <strong>donations</strong> and <strong>meal distributions</strong>.",
+        "projects.smile.desc2": "The project operates in collaboration with <strong>Young Life Mozambique</strong>, focusing on practical assistance and solidarity for the Chimoio community.",
+        "projects.smile.activities": "What We Do",
+        "projects.smile.activity1.title": "Meal Distribution",
+        "projects.smile.activity1.desc": "Providing meals to families in need",
+        "projects.smile.activity2.title": "Donation Collection",
+        "projects.smile.activity2.desc": "Collecting food, clothes, and basic supplies",
+        "projects.smile.activity3.title": "Solidarity Events",
+        "projects.smile.activity3.desc": "Organizing community support activities",
+        "projects.smile.activity4.title": "Community Engagement",
+        "projects.smile.activity4.desc": "Involving local youth in social actions",
+        "projects.smile.upcomingEvent": "Upcoming Event",
+        "projects.smile.galleryTitle": "Project Moments",
+        "projects.smile.partnership": "Collaborating With",
+
         "programming.tech": "💻 Technologies I Use",
         "programming.projects": "🚀 My GitHub Projects",
         "programming.github": "🔗 My GitHub",
@@ -149,7 +188,8 @@ const TRANSLATIONS = {
         "footer.mission": "Turning passion into concrete projects",
         "footer.connect": "Connect With Me",
         "footer.contact": "Contact",
-        "footer.rights": "© 2025 Shelton Mazinguire Manuel. All rights reserved."
+        "footer.rights": "© 2025 Shelton Mazinguire Manuel. All rights reserved.",
+        "footer.diverse": "Engineering | Technology | Social Impact | Leadership"
     },
 
     es: {
@@ -191,6 +231,25 @@ const TRANSLATIONS = {
         "leadership.eventsText": "Planificación y ejecución de actividades recreativas y educativas",
         "leadership.gallery": "📸 Galería - Young Life",
 
+        // Social Projects - NOVAS TRADUÇÕES
+        "nav.projects": "Proyectos Sociales",
+        "projects.smile.title": "Proyecto Sonrisa",
+        "projects.smile.subtitle": "Proyecto social estudiantil en colaboración con Young Life",
+        "projects.smile.desc1": "El <strong>Proyecto Sonrisa</strong> es una iniciativa comunitaria creada por estudiantes para ayudar a personas necesitadas a través de <strong>donaciones</strong> y <strong>distribución de comidas</strong>.",
+        "projects.smile.desc2": "El proyecto opera en colaboración con <strong>Young Life Mozambique</strong>, enfocándose en asistencia práctica y solidaridad para la comunidad de Chimoio.",
+        "projects.smile.activities": "Lo Que Hacemos",
+        "projects.smile.activity1.title": "Distribución de Comidas",
+        "projects.smile.activity1.desc": "Proporcionar comidas a familias necesitadas",
+        "projects.smile.activity2.title": "Recolección de Donaciones",
+        "projects.smile.activity2.desc": "Recolectar alimentos, ropa y suministros básicos",
+        "projects.smile.activity3.title": "Eventos de Solidaridad",
+        "projects.smile.activity3.desc": "Organizar actividades de apoyo comunitario",
+        "projects.smile.activity4.title": "Compromiso Comunitario",
+        "projects.smile.activity4.desc": "Involucrar a jóvenes locales en acciones sociales",
+        "projects.smile.upcomingEvent": "Próximo Evento",
+        "projects.smile.galleryTitle": "Momentos del Proyecto",
+        "projects.smile.partnership": "Colaborando con",
+
         "programming.tech": "💻 Tecnologías que Utilizo",
         "programming.projects": "🚀 Proyectos en GitHub",
         "programming.github": "🔗 Mi GitHub",
@@ -220,7 +279,8 @@ const TRANSLATIONS = {
         "footer.mission": "Transformando pasión en proyectos concretos",
         "footer.connect": "Conéctate Conmigo",
         "footer.contact": "Contacto",
-        "footer.rights": "© 2025 Shelton Mazinguire Manuel. Todos los derechos reservados."
+        "footer.rights": "© 2025 Shelton Mazinguire Manuel. Todos los derechos reservados.",
+        "footer.diverse": "Ingeniería | Tecnología | Impacto Social | Liderazgo"
     },
 
     fr: {
@@ -262,6 +322,25 @@ const TRANSLATIONS = {
         "leadership.eventsText": "Planification et exécution d'activités récréatives et éducatives",
         "leadership.gallery": "📸 Galerie - Young Life",
 
+        // Social Projects - NOVAS TRADUÇÕES
+        "nav.projects": "Projets Sociaux",
+        "projects.smile.title": "Projet Sourire",
+        "projects.smile.subtitle": "Projet social étudiant en partenariat avec Young Life",
+        "projects.smile.desc1": "Le <strong>Projet Sourire</strong> est une initiative communautaire créée par des étudiants pour aider les personnes dans le besoin grâce à des <strong>dons</strong> et à la <strong>distribution de repas</strong>.",
+        "projects.smile.desc2": "Le projet opère en collaboration avec <strong>Young Life Mozambique</strong>, en se concentrant sur l'assistance pratique et la solidarité pour la communauté de Chimoio.",
+        "projects.smile.activities": "Ce Que Nous Faisons",
+        "projects.smile.activity1.title": "Distribution de Repas",
+        "projects.smile.activity1.desc": "Fournir des repas aux familles dans le besoin",
+        "projects.smile.activity2.title": "Collecte de Dons",
+        "projects.smile.activity2.desc": "Collecte de nourriture, vêtements et fournitures de base",
+        "projects.smile.activity3.title": "Événements de Solidarité",
+        "projects.smile.activity3.desc": "Organisation d'activités de soutien communautaire",
+        "projects.smile.activity4.title": "Engagement Communautaire",
+        "projects.smile.activity4.desc": "Impliquer les jeunes locaux dans des actions sociales",
+        "projects.smile.upcomingEvent": "Événement à Venir",
+        "projects.smile.galleryTitle": "Moments du Projet",
+        "projects.smile.partnership": "Collaboration avec",
+
         "programming.tech": "💻 Technologies que J'utilise",
         "programming.projects": "🚀 Projets GitHub",
         "programming.github": "🔗 Mon GitHub",
@@ -291,7 +370,8 @@ const TRANSLATIONS = {
         "footer.mission": "Transformer la passion en projets concrets",
         "footer.connect": "Contactez-moi",
         "footer.contact": "Contact",
-        "footer.rights": "© 2025 Shelton Mazinguire Manuel. Tous droits réservés."
+        "footer.rights": "© 2025 Shelton Mazinguire Manuel. Tous droits réservés.",
+        "footer.diverse": "Ingénierie | Technologie | Impact Social | Leadership"
     },
 
     ru: {
@@ -333,6 +413,25 @@ const TRANSLATIONS = {
         "leadership.eventsText": "Планирование и проведение образовательных и развлекательных мероприятий",
         "leadership.gallery": "📸 Галерея - Young Life",
 
+        // Social Projects - NOVAS TRADUÇÕES
+        "nav.projects": "Социальные Проекты",
+        "projects.smile.title": "Проект Улыбка",
+        "projects.smile.subtitle": "Социальный проект студентов в партнерстве с Young Life",
+        "projects.smile.desc1": "<strong>Проект Улыбка</strong> - это общественная инициатива, созданная студентами для помощи нуждающимся через <strong>пожертвования</strong> и <strong>раздачу еды</strong>.",
+        "projects.smile.desc2": "Проект работает в сотрудничестве с <strong>Young Life Mozambique</strong>, сосредоточившись на практической помощи и солидарности для сообщества Чимоио.",
+        "projects.smile.activities": "Что Мы Делаем",
+        "projects.smile.activity1.title": "Раздача Еды",
+        "projects.smile.activity1.desc": "Обеспечение питанием нуждающихся семей",
+        "projects.smile.activity2.title": "Сбор Пожертвований",
+        "projects.smile.activity2.desc": "Сбор продуктов питания, одежды и основных принадлежностей",
+        "projects.smile.activity3.title": "События Солидарности",
+        "projects.smile.activity3.desc": "Организация мероприятий общественной поддержки",
+        "projects.smile.activity4.title": "Вовлечение Сообщества",
+        "projects.smile.activity4.desc": "Привлечение местной молодёжи к социальным действиям",
+        "projects.smile.upcomingEvent": "Предстоящее Событие",
+        "projects.smile.galleryTitle": "Моменты Проекта",
+        "projects.smile.partnership": "Сотрудничество с",
+
         "programming.tech": "💻 Технологии, которые я использую",
         "programming.projects": "🚀 Проекты на GitHub",
         "programming.github": "🔗 Мой GitHub",
@@ -362,7 +461,8 @@ const TRANSLATIONS = {
         "footer.mission": "Превращение страсти в конкретные проекты",
         "footer.connect": "Свяжитесь со мной",
         "footer.contact": "Контакт",
-        "footer.rights": "© 2025 Shelton Mazinguire Manuel. Все права защищены."
+        "footer.rights": "© 2025 Shelton Mazinguire Manuel. Все права защищены.",
+        "footer.diverse": "Инженерия | Технологии | Социальное воздействие | Лидерство"
     },
 
     zh: {
@@ -404,6 +504,25 @@ const TRANSLATIONS = {
         "leadership.eventsText": "规划和组织教育与娱乐活动",
         "leadership.gallery": "📸 相册 - Young Life",
 
+        // Social Projects - NOVAS TRADUÇÕES
+        "nav.projects": "社会项目",
+        "projects.smile.title": "微笑计划",
+        "projects.smile.subtitle": "与Young Life合作的学生主导的社会项目",
+        "projects.smile.desc1": "<strong>微笑计划</strong>是一个由学生创建的社区倡议，通过<strong>捐款</strong>和<strong>食物分发</strong>来帮助有需要的人。",
+        "projects.smile.desc2": "该项目与<strong>Young Life Mozambique</strong>合作，专注于为奇莫约社区提供实际援助和团结支持。",
+        "projects.smile.activities": "我们做什么",
+        "projects.smile.activity1.title": "食物分发",
+        "projects.smile.activity1.desc": "为有需要的家庭提供餐食",
+        "projects.smile.activity2.title": "捐款收集",
+        "projects.smile.activity2.desc": "收集食物、衣物和基本用品",
+        "projects.smile.activity3.title": "团结活动",
+        "projects.smile.activity3.desc": "组织社区支持活动",
+        "projects.smile.activity4.title": "社区参与",
+        "projects.smile.activity4.desc": "让当地青年参与社会行动",
+        "projects.smile.upcomingEvent": "即将举行的活动",
+        "projects.smile.galleryTitle": "项目时刻",
+        "projects.smile.partnership": "合作对象",
+
         "programming.tech": "💻 我使用的技术",
         "programming.projects": "🚀 GitHub 项目",
         "programming.github": "🔗 我的 GitHub",
@@ -433,7 +552,102 @@ const TRANSLATIONS = {
         "footer.mission": "将热情转化为具体项目",
         "footer.connect": "与我联系",
         "footer.contact": "联系",
-        "footer.rights": "© 2025 Shelton Mazinguire Manuel。保留所有权利。"
+        "footer.rights": "© 2025 Shelton Mazinguire Manuel。保留所有权利。",
+        "footer.diverse": "工程 | 技术 | 社会影响 | 领导力"
+    },
+
+    tr: {
+        // NOVA LÍNGUA TURCA
+        "nav.about": "Hakkımda",
+        "nav.leadership": "Liderlik",
+        "nav.programming": "Programlama",
+        "nav.courses": "Kurslar",
+        "nav.sports": "Spor",
+        
+        // Social Projects - NOVA LÍNGUA TURCA
+        "nav.projects": "Sosyal Projeler",
+
+        "hero.title": "Shelton Mazinguire Manuel",
+        "hero.tagline": "Öğrenci | Genç Programcı | Lider | Sporcu",
+
+        "about.journey": "🔄 Yolculuğum",
+        "about.journeyText": "Çimoio, Mozambik'te 12. sınıf öğrencisiyim. Teknoloji, mühendislik ve yeniliğe tutkulu biriyim. Bilgiyi öğrenmek ve toplumumu olumlu etkileyebilecek pratik projelerde uygulamak için sürekli çaba gösteriyorum.",
+        "about.education": "🎓 Akademik Eğitim",
+        "about.school": "Samora Machel Lisesi",
+        "about.year": "2024 - 2025",
+        "about.grade": "12. Sınıf - Biyoloji ile Fen",
+        "about.subject1": "Matematik",
+        "about.subject2": "Fizik ve Kimya",
+        "about.subject3": "Temel Programlama",
+        "about.skills": "🛠️ Beceriler",
+        "about.projects": "Tamamlanan Projeler",
+        "about.certificates": "Sertifikalar",
+        "about.experience": "Yıl Deneyim",
+        "about.goals": "🎯 Hedefler",
+        "about.goal1": "Makine Mühendisliği'nden mezun olmak",
+        "about.goal2": "Mozambik için teknolojik çözümler geliştirmek",
+        "about.goal3": "Endüstriyel gelişime katkıda bulunmak",
+        "about.goal4": "Teknoloji alanında gençlere ilham vermek",
+
+        "leadership.journey": "🌟 Liderlik Yolculuğum",
+        "leadership.journeyText": "Young Life Mozambique'de gençlik lideri olarak görev yapıyorum, etkinlikleri koordine ediyor ve gençlere rehberlik ediyorum.",
+        "leadership.coordination": "Grup Koordinasyonu",
+        "leadership.coordinationText": "Kişisel ve toplumsal gelişime odaklanan gençlik gruplarına liderlik",
+        "leadership.mentoring": "Mentorluk",
+        "leadership.mentoringText": "Gençlere eğitimsel ve kişisel yolculuklarında rehberlik ve destek",
+        "leadership.events": "Etkinlik Organizasyonu",
+        "leadership.eventsText": "Eğlence ve eğitim etkinliklerinin planlanması ve uygulanması",
+        "leadership.gallery": "📸 Galeri - Young Life",
+
+        // Social Projects - NOVA LÍNGUA TURCA
+        "projects.smile.title": "Gülümseme Projesi",
+        "projects.smile.subtitle": "Young Life ile ortaklık içinde öğrenci liderliğinde sosyal proje",
+        "projects.smile.desc1": "<strong>Gülümseme Projesi</strong>, öğrenciler tarafından ihtiyaç sahibi insanlara <strong>bağışlar</strong> ve <strong>yemek dağıtımı</strong> yoluyla yardım etmek için oluşturulmuş bir topluluk girişimidir.",
+        "projects.smile.desc2": "Proje, <strong>Young Life Mozambique</strong> ile işbirliği içinde çalışarak, Çimoio topluluğuna pratik yardım ve dayanışmaya odaklanmaktadır.",
+        "projects.smile.activities": "Neler Yapıyoruz",
+        "projects.smile.activity1.title": "Yemek Dağıtımı",
+        "projects.smile.activity1.desc": "İhtiyaç sahibi ailelere yemek sağlamak",
+        "projects.smile.activity2.title": "Bağış Toplama",
+        "projects.smile.activity2.desc": "Gıda, giysi ve temel malzemelerin toplanması",
+        "projects.smile.activity3.title": "Dayanışma Etkinlikleri",
+        "projects.smile.activity3.desc": "Topluluk destek faaliyetlerinin organize edilmesi",
+        "projects.smile.activity4.title": "Topluluk Katılımı",
+        "projects.smile.activity4.desc": "Yerel gençlerin sosyal eylemlere dahil edilmesi",
+        "projects.smile.upcomingEvent": "Yaklaşan Etkinlik",
+        "projects.smile.galleryTitle": "Proje Anları",
+        "projects.smile.partnership": "İşbirliği Yapılan",
+
+        "programming.tech": "💻 Kullandığım Teknolojiler",
+        "programming.projects": "🚀 GitHub Projelerim",
+        "programming.github": "🔗 GitHub Hesabım",
+        "programming.visit": "GitHub'ımı Ziyaret Et",
+        "programming.repos": "Depolar:",
+        "programming.followers": "Takipçiler:",
+
+        "courses.header": "📚 Aldığım Kurslar",
+        "courses.subtitle": "Teknik becerilerimi geliştirmek için çevrimiçi kurslar aracılığıyla sürekli gelişim",
+        "courses.certificates": "🏆 Sertifikalarım",
+
+        "sports.passion": "🏐 Hentbol Tutkum",
+        "sports.passionText": "Disiplin, takım çalışması ve sportmenlik ruhu geliştiren rekabetçi hentbolun düzenli olarak uygulanması.",
+        "sports.years": "Oynanan Yıl",
+        "sports.games": "Rekabetçi Maçlar",
+        "sports.awards": "Ödüller",
+        "sports.benefits": "🎯 Sporun Faydaları",
+        "sports.benefit1": "Disiplin ve odaklanma",
+        "sports.benefit2": "Takım çalışması",
+        "sports.benefit3": "Zaman yönetimi",
+        "sports.benefit4": "Zihinsel dayanıklılık",
+        "sports.benefit5": "Fiziksel sağlık",
+        "sports.moments": "📸 Hentbol Anları",
+        "sports.videos": "🎥 Maç Videoları",
+
+        "footer.tagline": "Öğrenci | Programcı | Lider | Sporcu",
+        "footer.mission": "Tutkuyu somut projelere dönüştürmek",
+        "footer.connect": "Benimle Bağlantı Kur",
+        "footer.contact": "İletişim",
+        "footer.rights": "© 2025 Shelton Mazinguire Manuel. Tüm hakları saklıdır.",
+        "footer.diverse": "Mühendislik | Teknoloji | Sosyal Etki | Liderlik"
     }
 };
 
@@ -477,7 +691,16 @@ const TRANSLATIONS = {
                 const translation = langData[key];
                 
                 if (translation !== undefined) {
-                    element.textContent = translation;
+                    // Verifica se é conteúdo HTML ou texto simples
+                    if (element.tagName === 'P' && (key.includes('desc') || key.includes('Text'))) {
+                        // Para parágrafos com HTML (como strong tags)
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = translation;
+                        element.innerHTML = tempDiv.innerHTML;
+                    } else {
+                        // Para texto simples
+                        element.textContent = translation;
+                    }
                     translatedCount++;
                 }
             });
@@ -537,7 +760,8 @@ const TRANSLATIONS = {
                 'es': '🇪🇸',
                 'fr': '🇫🇷',
                 'ru': '🇷🇺',
-                'zh': '🇨🇳'
+                'zh': '🇨🇳',
+                'tr': '🇹🇷'  // NOVA BANDEIRA TURCA
             };
             
             const codeMap = {
@@ -546,7 +770,8 @@ const TRANSLATIONS = {
                 'es': 'ES',
                 'fr': 'FR',
                 'ru': 'RU',
-                'zh': 'ZH'
+                'zh': 'ZH',
+                'tr': 'TR'  // NOVO CÓDIGO TURCO
             };
             
             const flagSpan = button.querySelector('.flag');
@@ -558,55 +783,54 @@ const TRANSLATIONS = {
             console.log(`🔄 Botão atualizado para: ${lang}`);
         },
         
-        // Dentro do translations.js, localize a função setupDropdown e substitua por:
-
-// Configura dropdown - VERSÃO CORRIGIDA
-setupDropdown() {
-    const mainButton = document.querySelector('.lang-btn');
-    const dropdown = document.querySelector('.lang-dropdown');
-    
-    if (!mainButton || !dropdown) {
-        console.warn('⚠️ Elementos do dropdown não encontrados');
-        return;
-    }
-    
-    // Toggle dropdown
-    mainButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        dropdown.classList.toggle('active');
-    });
-    
-    // Opções do dropdown - IMPORTANTE: usar data-lang, não data-set-lang
-    dropdown.querySelectorAll('.lang-option').forEach(option => {
-        option.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
+        // Configura dropdown - VERSÃO CORRIGIDA
+        setupDropdown() {
+            const mainButton = document.querySelector('.lang-btn');
+            const dropdown = document.querySelector('.lang-dropdown');
             
-            const lang = option.getAttribute('data-lang'); // CORRIGIDO: data-lang
-            if (lang && this.changeLanguage) {
-                this.changeLanguage(lang);
-                dropdown.classList.remove('active');
+            if (!mainButton || !dropdown) {
+                console.warn('⚠️ Elementos do dropdown não encontrados');
+                return;
             }
-        });
-    });
-    
-    // Fecha ao clicar fora
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.language-selector')) {
-            dropdown.classList.remove('active');
-        }
-    });
-    
-    // Fecha com ESC
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            dropdown.classList.remove('active');
-        }
-    });
-    
-    console.log('✅ Dropdown configurado corretamente');
-},
+            
+            // Toggle dropdown
+            mainButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                dropdown.classList.toggle('active');
+            });
+            
+            // Opções do dropdown - IMPORTANTE: usar data-lang, não data-set-lang
+            dropdown.querySelectorAll('.lang-option').forEach(option => {
+                option.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    const lang = option.getAttribute('data-lang'); // CORRIGIDO: data-lang
+                    if (lang && this.changeLanguage) {
+                        this.changeLanguage(lang);
+                        dropdown.classList.remove('active');
+                    }
+                });
+            });
+            
+            // Fecha ao clicar fora
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.language-selector')) {
+                    dropdown.classList.remove('active');
+                }
+            });
+            
+            // Fecha com ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    dropdown.classList.remove('active');
+                }
+            });
+            
+            console.log('✅ Dropdown configurado corretamente');
+        },
+        
         // Obtém idiomas suportados
         getSupportedLanguages() {
             return supportedLangs;
@@ -615,6 +839,16 @@ setupDropdown() {
         // Traduz uma chave específica
         translate(key) {
             return TRANSLATIONS[this.currentLang]?.[key] || TRANSLATIONS[defaultLang]?.[key] || key;
+        },
+        
+        // NOVO: Verifica se uma chave existe
+        hasKey(key) {
+            return TRANSLATIONS[this.currentLang]?.[key] !== undefined;
+        },
+        
+        // NOVO: Obtém todas as chaves para debug
+        getAllKeys() {
+            return Object.keys(TRANSLATIONS[this.currentLang] || {});
         }
     };
     

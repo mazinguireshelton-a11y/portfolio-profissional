@@ -1,0 +1,701 @@
+// Projects and GitHub Integration
+class ProjectManager {
+    constructor() {
+        this.projects = [];
+        this.githubData = null;
+        this.init();
+    }
+
+    async init() {
+        await this.loadProjects();
+        await this.loadGitHubData();
+        this.renderProjects();
+        this.renderGitHubInfo();
+    }
+
+    // Load projects data
+    async loadProjects() {
+        // Sample projects data - replace with your actual projects
+        this.projects = [
+            {
+                id: 1,
+                name: 'Sistema de Automação Residencial',
+                description: 'Sistema de controle residencial usando Arduino e sensores para automação de luzes e temperatura.',
+                technologies: ['Arduino', 'C++', 'Tinkercad'],
+                githubUrl: 'https://github.com/sheltonmanuel/automacao-residencial',
+                demoUrl: null,
+                status: 'completed',
+                image: 'assets/images/projects/automacao.jpg',
+                category: 'robotics'
+            },
+            {
+                id: 2,
+                name: 'Portfólio Pessoal',
+                description: 'Website pessoal desenvolvido com HTML, CSS e JavaScript para showcase de projetos e habilidades.',
+                technologies: ['HTML5', 'CSS3', 'JavaScript'],
+                githubUrl: 'https://github.com/sheltonmanuel/portfolio',
+                demoUrl: 'https://sheltonmanuel.github.io/portfolio',
+                status: 'completed',
+                image: 'assets/images/projects/portfolio.jpg',
+                category: 'web'
+            },
+            {
+                id: 3,
+                name: 'Simulador de Circuitos Eletrônicos',
+                description: 'Ferramenta para simulação de circuitos eletrônicos usando Python e interfaces gráficas.',
+                technologies: ['Python', 'Tkinter', 'NumPy'],
+                githubUrl: 'https://github.com/sheltonmanuel/simulador-circuitos',
+                demoUrl: null,
+                status: 'in-progress',
+                image: 'assets/images/projects/circuitos.jpg',
+                category: 'programming'
+            },
+            {
+                id: 4,
+                name: 'App de Gestão de Estudos',
+                description: 'Aplicativo mobile para organização de horários de estudo e acompanhamento de progresso acadêmico.',
+                technologies: ['React Native', 'Firebase', 'JavaScript'],
+                githubUrl: 'https://github.com/sheltonmanuel/gestao-estudos',
+                demoUrl: null,
+                status: 'planned',
+                image: 'assets/images/projects/estudos.jpg',
+                category: 'mobile'
+            }
+        ];
+    }
+
+    // Load GitHub data (you can use GitHub API later)
+    async loadGitHubData() {
+        try {
+            // For now, using mock data. You can integrate with GitHub API later.
+            this.githubData = {
+                username: 'sheltonmanuel',
+                repos: 8,
+                followers: 12,
+                following: 5,
+                stars: 23,
+                profileUrl: 'https://github.com/sheltonmanuel'
+            };
+
+            // Uncomment below to use GitHub API (requires authentication)
+            /*
+            const response = await fetch('https://api.github.com/users/sheltonmanuel');
+            if (response.ok) {
+                this.githubData = await response.json();
+            }
+            */
+        } catch (error) {
+            console.warn('Could not load GitHub data:', error);
+            // Fallback data
+            this.githubData = {
+                username: 'sheltonmanuel',
+                repos: 8,
+                followers: 12,
+                following: 5,
+                stars: 23,
+                profileUrl: 'https://github.com/sheltonmanuel'
+            };
+        }
+    }
+
+    // Render projects to the DOM
+    renderProjects() {
+        const container = document.getElementById('projetosGitHub');
+        if (!container) return;
+
+        container.innerHTML = this.projects.map(project => `
+            <div class="projeto-card" data-category="${project.category}">
+                <div class="projeto-header">
+                    <h4>${project.name}</h4>
+                    <span class="projeto-status ${project.status}">
+                        ${this.getStatusText(project.status)}
+                    </span>
+                </div>
+                <p>${project.description}</p>
+                
+                <div class="projeto-technologies">
+                    ${project.technologies.map(tech => `
+                        <span class="tech-tag">${tech}</span>
+                    `).join('')}
+                </div>
+                
+                <div class="projeto-links">
+                    ${project.githubUrl ? `
+                        <a href="${project.githubUrl}" target="_blank" class="btn-link">
+                            <i class="fab fa-github"></i>
+                            Código
+                        </a>
+                    ` : ''}
+                    
+                    ${project.demoUrl ? `
+                        <a href="${project.demoUrl}" target="_blank" class="btn-link btn-secondary">
+                            <i class="fas fa-external-link-alt"></i>
+                            Demo
+                        </a>
+                    ` : ''}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Render GitHub information - CORRIGIDO (sem duplicação)
+    renderGitHubInfo() {
+        if (!this.githubData) return;
+
+        // ✅ REMOVIDA a atualização dos contadores numéricos
+        // (agora gerenciados exclusivamente pelo contadores.js)
+        
+        // ✅ MANTIDO apenas a atualização do link do GitHub
+        const githubBtn = document.querySelector('.github-btn');
+        if (githubBtn) {
+            githubBtn.href = this.githubData.profileUrl;
+        }
+        
+        console.log('✅ GitHub info: Link atualizado, contadores gerenciados pelo sistema unificado');
+    }
+
+    // Helper method to get status text
+    getStatusText(status) {
+        const statusMap = {
+            'completed': 'Concluído',
+            'in-progress': 'Em Andamento',
+            'planned': 'Planejado'
+        };
+        return statusMap[status] || status;
+    }
+
+    // Filter projects by category
+    filterProjects(category) {
+        if (category === 'all') {
+            this.renderProjects();
+        } else {
+            const filtered = this.projects.filter(project => project.category === category);
+            this.renderFilteredProjects(filtered);
+        }
+    }
+
+    renderFilteredProjects(filteredProjects) {
+        const container = document.getElementById('projetosGitHub');
+        if (!container) return;
+
+        container.innerHTML = filteredProjects.map(project => `
+            <div class="projeto-card">
+                <div class="projeto-header">
+                    <h4>${project.name}</h4>
+                    <span class="projeto-status ${project.status}">
+                        ${this.getStatusText(project.status)}
+                    </span>
+                </div>
+                <p>${project.description}</p>
+                
+                <div class="projeto-technologies">
+                    ${project.technologies.map(tech => `
+                        <span class="tech-tag">${tech}</span>
+                    `).join('')}
+                </div>
+                
+                <div class="projeto-links">
+                    ${project.githubUrl ? `
+                        <a href="${project.githubUrl}" target="_blank" class="btn-link">
+                            <i class="fab fa-github"></i>
+                            Código
+                        </a>
+                    ` : ''}
+                    
+                    ${project.demoUrl ? `
+                        <a href="${project.demoUrl}" target="_blank" class="btn-link btn-secondary">
+                            <i class="fas fa-external-link-alt"></i>
+                            Demo
+                        </a>
+                    ` : ''}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Add new project
+    addProject(projectData) {
+        const newId = Math.max(...this.projects.map(p => p.id)) + 1;
+        this.projects.push({
+            id: newId,
+            ...projectData
+        });
+        this.renderProjects();
+    }
+
+    // Remove project
+    removeProject(projectId) {
+        this.projects = this.projects.filter(project => project.id !== projectId);
+        this.renderProjects();
+    }
+}
+
+// Cursos Management
+class CourseManager {
+    constructor() {
+        this.courses = [];
+        this.init();
+    }
+
+    init() {
+        this.loadCourses();
+        this.renderCourses();
+    }
+
+    loadCourses() {
+        // Sample courses data - replace with your actual courses from Alisson
+        this.courses = [
+            {
+                id: 1,
+                name: 'Python para Iniciantes',
+                instructor: 'Alisson',
+                description: 'Curso introdutório de Python com foco em fundamentos e projetos práticos.',
+                progress: 85,
+                status: 'in-progress',
+                certificateUrl: null,
+                startDate: '2024-01-10',
+                endDate: null,
+                category: 'programming'
+            },
+            {
+                id: 2,
+                name: 'Desenvolvimento Web Moderno',
+                instructor: 'Alisson',
+                description: 'HTML5, CSS3 e JavaScript para criação de websites responsivos.',
+                progress: 100,
+                status: 'completed',
+                certificateUrl: '#',
+                startDate: '2023-11-15',
+                endDate: '2024-01-20',
+                category: 'web'
+            },
+            {
+                id: 3,
+                name: 'Introdução à Robótica com Arduino',
+                instructor: 'Alisson',
+                description: 'Fundamentos de robótica e automação usando plataforma Arduino.',
+                progress: 70,
+                status: 'in-progress',
+                certificateUrl: null,
+                startDate: '2024-02-01',
+                endDate: null,
+                category: 'robotics'
+            },
+            {
+                id: 4,
+                name: 'Gestão de Projetos Tecnológicos',
+                instructor: 'Alisson',
+                description: 'Metodologias ágeis e gestão de projetos na área de tecnologia.',
+                progress: 0,
+                status: 'planned',
+                certificateUrl: null,
+                startDate: '2024-05-01',
+                endDate: null,
+                category: 'management'
+            }
+        ];
+    }
+
+    renderCourses() {
+        const container = document.getElementById('cursosGrid');
+        if (!container) return;
+
+        container.innerHTML = this.courses.map(course => `
+            <div class="curso-card">
+                <div class="curso-header">
+                    <h4>${course.name}</h4>
+                    <span class="curso-status ${course.status}">
+                        ${this.getStatusText(course.status)}
+                    </span>
+                </div>
+                
+                <p class="curso-instructor">Instrutor: ${course.instructor}</p>
+                <p class="curso-description">${course.description}</p>
+                
+                <div class="curso-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: ${course.progress}%"></div>
+                    </div>
+                    <span class="progress-text">${course.progress}%</span>
+                </div>
+                
+                <div class="curso-dates">
+                    <span>Início: ${window.Portfolio.formatDate(course.startDate)}</span>
+                    ${course.endDate ? `<span>Conclusão: ${window.Portfolio.formatDate(course.endDate)}</span>` : ''}
+                </div>
+                
+                <div class="curso-links">
+                    ${course.certificateUrl ? `
+                        <a href="${course.certificateUrl}" class="btn-link" target="_blank">
+                            <i class="fas fa-certificate"></i>
+                            Ver Certificado
+                        </a>
+                    ` : `
+                        <span class="no-certificate">Certificado em breve</span>
+                    `}
+                </div>
+            </div>
+        `).join('');
+    }
+
+    getStatusText(status) {
+        const statusMap = {
+            'completed': 'Concluído',
+            'in-progress': 'Em Andamento',
+            'planned': 'Planejado'
+        };
+        return statusMap[status] || status;
+    }
+
+    // Update course progress
+    updateProgress(courseId, progress) {
+        const course = this.courses.find(c => c.id === courseId);
+        if (course) {
+            course.progress = progress;
+            if (progress === 100) {
+                course.status = 'completed';
+                course.endDate = new Date().toISOString().split('T')[0];
+            }
+            this.renderCourses();
+        }
+    }
+
+    // Add new course
+    addCourse(courseData) {
+        const newId = Math.max(...this.courses.map(c => c.id)) + 1;
+        this.courses.push({
+            id: newId,
+            ...courseData
+        });
+        this.renderCourses();
+    }
+}
+
+// Menu Mobile
+class MobileMenu {
+    constructor() {
+        this.hamburger = document.querySelector('.hamburger');
+        this.navLinks = document.querySelector('.nav-links');
+        this.init();
+    }
+
+    init() {
+        if (this.hamburger) {
+            this.hamburger.addEventListener('click', () => this.toggleMenu());
+        }
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => this.closeMenu());
+        });
+
+        // Fechar menu ao redimensionar para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                this.closeMenu();
+            }
+        });
+    }
+
+    toggleMenu() {
+        this.hamburger.classList.toggle('active');
+        this.navLinks.classList.toggle('active');
+        document.body.style.overflow = this.navLinks.classList.contains('active') ? 'hidden' : '';
+    }
+
+    closeMenu() {
+        this.hamburger.classList.remove('active');
+        this.navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', async () => {
+    window.projectManager = new ProjectManager();
+    window.courseManager = new CourseManager();
+    new MobileMenu();
+
+    // Add some interactive features
+    addProjectFilters();
+    setupCourseInteractions();
+});
+
+// Add project filtering functionality
+function addProjectFilters() {
+    // You can add filter buttons in your HTML and connect them here
+    const filterButtons = document.querySelectorAll('.project-filter');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.getAttribute('data-filter');
+            window.projectManager.filterProjects(category);
+            
+            // Update active filter
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        });
+    });
+}
+
+// Setup course interactions
+function setupCourseInteractions() {
+    // Add hover effects to course cards
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest('.curso-card')) {
+            const card = e.target.closest('.curso-card');
+            card.style.transform = 'translateY(-5px)';
+            card.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.15)';
+        }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest('.curso-card')) {
+            const card = e.target.closest('.curso-card');
+            card.style.transform = 'translateY(0)';
+            card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+        }
+    });
+}
+
+// Add CSS for projects and courses
+const projectStyles = `
+    .projeto-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 1.5rem;
+    }
+
+    .projeto-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .projeto-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    .projeto-header h4 {
+        color: var(--primary);
+        margin: 0;
+        flex: 1;
+    }
+
+    .projeto-status {
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-left: 1rem;
+    }
+
+    .projeto-status.completed {
+        background: var(--success);
+        color: white;
+    }
+
+    .projeto-status.in-progress {
+        background: var(--accent);
+        color: white;
+    }
+
+    .projeto-status.planned {
+        background: var(--gray-light);
+        color: var(--dark);
+    }
+
+    .projeto-technologies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+
+    .tech-tag {
+        background: var(--gray-light);
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 0.8rem;
+        color: var(--dark);
+    }
+
+    .projeto-links {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .btn-secondary {
+        background: var(--secondary);
+    }
+
+    .btn-secondary:hover {
+        background: var(--primary-dark);
+    }
+
+    /* Course Styles */
+    .curso-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        margin-bottom: 1.5rem;
+    }
+
+    .curso-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    .curso-header h4 {
+        color: var(--primary);
+        margin: 0;
+        flex: 1;
+    }
+
+    .curso-status {
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+        margin-left: 1rem;
+    }
+
+    .curso-status.completed {
+        background: var(--success);
+        color: white;
+    }
+
+    .curso-status.in-progress {
+        background: var(--accent);
+        color: white;
+    }
+
+    .curso-status.planned {
+        background: var(--gray-light);
+        color: var(--dark);
+    }
+
+    .curso-instructor {
+        color: var(--gray);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .curso-description {
+        margin-bottom: 1.5rem;
+    }
+
+    .curso-progress {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .progress-bar {
+        flex: 1;
+        height: 8px;
+        background: var(--gray-light);
+        border-radius: 4px;
+        overflow: hidden;
+    }
+
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(to right, var(--accent), var(--secondary));
+        border-radius: 4px;
+        transition: width 0.5s ease;
+    }
+
+    .progress-text {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--primary);
+        min-width: 40px;
+    }
+
+    .curso-dates {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        color: var(--gray);
+        margin-bottom: 1.5rem;
+    }
+
+    .curso-links {
+        text-align: center;
+    }
+
+    .no-certificate {
+        color: var(--gray);
+        font-style: italic;
+        font-size: 0.9rem;
+    }
+
+    /* Project Filters */
+    .project-filters {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .project-filter {
+        padding: 8px 16px;
+        background: white;
+        border: 2px solid var(--gray-light);
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+
+    .project-filter.active,
+    .project-filter:hover {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
+`;
+
+// Inject project styles
+const projectStyleSheet = document.createElement('style');
+projectStyleSheet.textContent = projectStyles;
+document.head.appendChild(projectStyleSheet);
+
+// js/main.js - ADICIONE ESTE CÓDIGO
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Inicializando aplicação completa...');
+    
+    // Garantir que o sistema de tradução esteja funcionando
+    if (!window.completeTranslationSystem) {
+        console.log('🔄 Reinicializando sistema de tradução...');
+        window.completeTranslationSystem = new CompleteTranslationSystem();
+    }
+    
+    // Verificar se estamos em mobile
+    if (window.innerWidth <= 768) {
+        console.log('📱 Modo mobile detectado - otimizando traduções...');
+        document.body.classList.add('mobile-mode');
+    }
+    
+    // Adicionar listener para mudanças de orientação
+    window.addEventListener('orientationchange', function() {
+        setTimeout(() => {
+            if (window.completeTranslationSystem) {
+                window.completeTranslationSystem.applyTranslations();
+            }
+        }, 300);
+    });
+});
