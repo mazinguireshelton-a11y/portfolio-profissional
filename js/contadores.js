@@ -21,7 +21,14 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "2025", 
             file: "certificado-lideranca-2025.pdf",
             description: "In this course I deepened my knowledge in: how to lead a team effectively and how to take on responsibilities."
-        }
+        },
+        {
+            id: 3, 
+            name: "Academic_Ranking_Shelton", 
+            institution: "secondary school samora Moisés machel ",
+            date: "2026", 
+            file: "Academic_Ranking_Shelton.pdf",
+            description: "Ranked among the top students in class for overall performance in Mathematics, Physics, Chemistry, and related subjects."
     ];
 
     // UPDATE COUNTERS
