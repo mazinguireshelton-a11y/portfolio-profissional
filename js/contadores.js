@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
             date: "2026", 
             file: "Academic_Ranking_Shelton.pdf",
             description: "Ranked among the top students in class for overall performance in Mathematics, Physics, Chemistry, and related subjects."
-    ];
+       }            
+      ];
 
     // UPDATE COUNTERS
     function updateCounters() {
