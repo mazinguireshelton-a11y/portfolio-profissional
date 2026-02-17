@@ -4,7 +4,7 @@ console.log('🎯 COUNTER SYSTEM STARTED!');
 document.addEventListener('DOMContentLoaded', function() {
     console.log('📄 DOM Loaded - Starting counters...');
     
-    // YOUR 2 REAL CERTIFICATES - WITH DESCRIPTIONS
+    // my certificates
     const certificates = [
         {
             id: 1,
