@@ -16,7 +16,7 @@ const TRANSLATIONS = {
 
         // Sobre Mim
         "about.journey": "🔄 Minha Jornada",
-        "about.journeyText": "Sou estudante do 12º ano em Chimoio, Moçambique, com paixão por tecnologia, engenharia e inovação. Busco constantemente aprender e aplicar conhecimentos em projetos práticos que impactem positivamente minha comunidade.",
+        "about.journeyText": "Sou um recém-formado do ensino secundário em Chimoio, Moçambique, com uma sólida formação académica em ciências e um interesse crescente em engenharia e tecnologias aplicadas. Tenho especial interesse em utilizar ferramentas computacionais e sistemas técnicos para resolver desafios reais em comunidades em desenvolvimento. Através de projetos de programação, excelência académica e iniciativas de liderança juvenil, desenvolvi uma mentalidade disciplinada e orientada para a resolução de problemas, com o objetivo de construir uma base sólida para uma futura carreira em engenharia.",
         "about.education": "🎓 Formação Académica",
         "about.school": "Escola Secundária Samora Machel",
         "about.year": "2024 - 2025",
@@ -112,7 +112,7 @@ const TRANSLATIONS = {
         "hero.tagline": "Student | Junior Programmer | Leader | Athlete",
 
         "about.journey": "🔄 My Journey",
-        "about.journeyText": "I am a 12th-grade student in Chimoio, Mozambique, passionate about technology, engineering and innovation. I constantly seek to learn and apply knowledge in practical projects that positively impact my community.",
+        "about.journeyText": "I am a recent secondary school graduate from Chimoio, Mozambique, with a strong academic background in science and a growing focus on engineering and applied technology. I am particularly interested in using computational tools and technical systems to address real-world challenges in developing communities. Through programming projects, academic excellence, and youth leadership initiatives, I have developed a disciplined and problem-solving mindset aimed at building a solid foundation for a future career in engineering.",
         "about.education": "🎓 Academic Background",
         "about.school": "Samora Machel Secondary School",
         "about.year": "2024 - 2025",
@@ -203,7 +203,7 @@ const TRANSLATIONS = {
         "hero.tagline": "Estudiante | Programador Junior | Líder | Atleta",
 
         "about.journey": "🔄 Mi Trayectoria",
-        "about.journeyText": "Soy estudiante de 12º grado en Chimoio, Mozambique, apasionado por la tecnología, la ingeniería y la innovación. Busco aprender y aplicar conocimientos en proyectos prácticos que impacten mi comunidad.",
+        "about.journeyText": "Soy un recién graduado de educación secundaria en Chimoio, Mozambique, con una sólida formación académica en ciencias y un interés creciente en ingeniería y tecnologías aplicadas. Me interesa especialmente utilizar herramientas computacionales y sistemas técnicos para abordar desafíos reales en comunidades en desarrollo. A través de proyectos de programación, excelencia académica e iniciativas de liderazgo juvenil, he desarrollado una mentalidad disciplinada y orientada a la resolución de problemas, con el objetivo de construir una base sólida para una futura carrera en ingeniería.",
         "about.education": "🎓 Formación Académica",
         "about.school": "Escuela Secundaria Samora Machel",
         "about.year": "2024 - 2025",
@@ -294,7 +294,7 @@ const TRANSLATIONS = {
         "hero.tagline": "Étudiant | Programmeur Junior | Leader | Athlète",
 
         "about.journey": "🔄 Mon Parcours",
-        "about.journeyText": "Je suis élève de 12e année à Chimoio, Mozambique, passionné par la technologie, l'ingénierie et l'innovation. Je cherche à apprendre et appliquer des connaissances dans des projets pratiques qui ont un impact positif.",
+        "about.journeyText": "Je suis un récent diplômé de l’enseignement secondaire à Chimoio, au Mozambique, avec une solide formation académique en sciences et un intérêt croissant pour l’ingénierie et les technologies appliquées. Je m’intéresse particulièrement à l’utilisation d’outils informatiques et de systèmes techniques pour relever des défis concrets dans les communautés en développement. À travers des projets de programmation, l’excellence académique et des initiatives de leadership jeunesse, j’ai développé un esprit discipliné et orienté vers la résolution de problèmes, dans le but de construire une base solide pour une future carrière en ingénierie.",
         "about.education": "🎓 Formation Académique",
         "about.school": "École Secondaire Samora Machel",
         "about.year": "2024 - 2025",
@@ -385,7 +385,7 @@ const TRANSLATIONS = {
         "hero.tagline": "Студент | Младший программист | Лидер | Спортсмен",
 
         "about.journey": "🔄 Мой путь",
-        "about.journeyText": "Я ученик 12 класса в Чимоио, Мозамбик. Увлекаюсь технологиями, инженерией и инновациями. Постоянно стремлюсь учиться и применять знания в практических проектах.",
+        "about.journeyText": "Я недавно окончил среднюю школу в Чимоио, Мозамбик, обладаю прочной академической подготовкой в области науки и проявляю растущий интерес к инженерии и прикладным технологиям. Меня особенно интересует использование вычислительных инструментов и технических систем для решения реальных проблем в развивающихся сообществах. Через проекты по программированию, академическое совершенство и инициативы молодежного лидерства я развил дисциплинированное и ориентированное на решение проблем мышление, направленное на создание прочной базы для будущей карьеры в инженерии.",
         "about.education": "🎓 Образование",
         "about.school": "Средняя школа Самора Машел",
         "about.year": "2024 - 2025",
@@ -476,7 +476,7 @@ const TRANSLATIONS = {
         "hero.tagline": "学生 | 初级程序员 | 领导者 | 运动员",
 
         "about.journey": "🔄 我的旅程",
-        "about.journeyText": "我是来自奇莫约的12年级学生，热爱技术、工程和创新。我不断寻求在实践项目中学习并应用知识，以积极影响我的社区。",
+        "about.journeyText": "我是一名来自莫桑比克希莫尤的应届中学毕业生，拥有扎实的科学学术背景，并对工程和应用技术有着日益浓厚的兴趣。我特别关注利用计算工具和技术系统来解决发展中社区的实际问题。通过编程项目、学术卓越以及青年领导力活动，我培养了严谨且以解决问题为导向的思维方式，旨在为未来的工程职业打下坚实的基础。",
         "about.education": "🎓 学历",
         "about.school": "萨莫拉·马谢尔中学",
         "about.year": "2024 - 2025",
@@ -571,7 +571,7 @@ const TRANSLATIONS = {
         "hero.tagline": "Öğrenci | Genç Programcı | Lider | Sporcu",
 
         "about.journey": "🔄 Yolculuğum",
-        "about.journeyText": "Çimoio, Mozambik'te 12. sınıf öğrencisiyim. Teknoloji, mühendislik ve yeniliğe tutkulu biriyim. Bilgiyi öğrenmek ve toplumumu olumlu etkileyebilecek pratik projelerde uygulamak için sürekli çaba gösteriyorum.",
+        "about.journeyText": "Mozambik’in Chimoio şehrinden yeni mezun olmuş bir lise öğrencisiyim. Bilim alanında sağlam bir akademik geçmişe sahibim ve mühendislik ile uygulamalı teknolojilere giderek artan bir ilgi duyuyorum. Özellikle gelişmekte olan topluluklardaki gerçek dünya sorunlarını çözmek için bilgisayar araçlarını ve teknik sistemleri kullanmaya ilgi duyuyorum. Programlama projeleri, akademik başarı ve gençlik liderliği girişimleri aracılığıyla, gelecekteki mühendislik kariyerim için sağlam bir temel oluşturmayı amaçlayan disiplinli ve problem çözme odaklı bir zihniyet geliştirdim.",
         "about.education": "🎓 Akademik Eğitim",
         "about.school": "Samora Machel Lisesi",
         "about.year": "2024 - 2025",
