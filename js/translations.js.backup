@@ -422,7 +422,7 @@ class UnifiedTranslationSystem {
                 },
                 'about': {
                     'journey': '🔄 Minha Jornada',
-                    'journeyText': 'Sou estudante do 12º ano em Chimoio, Moçambique, com paixão por tecnologia, engenharia e inovação. Busco constantemente aprender e aplicar conhecimentos em projetos práticos que possam impactar positivamente minha comunidade.',
+                    'journeyText': 'Sou um recém-formado do ensino secundário em Chimoio, Moçambique, com uma sólida formação académica em ciências e um interesse crescente em engenharia e tecnologias aplicadas. Tenho especial interesse em utilizar ferramentas computacionais e sistemas técnicos para resolver desafios reais em comunidades em desenvolvimento. Através de projetos de programação, excelência académica e iniciativas de liderança juvenil, desenvolvi uma mentalidade disciplinada e orientada para a resolução de problemas, com o objetivo de construir uma base sólida para uma futura carreira em engenharia.',
                     'education': '🎓 Formação Acadêmica',
                     'school': 'Escola Secundária Samora Machel',
                     'year': '2024 - 2025', 
@@ -547,7 +547,7 @@ class UnifiedTranslationSystem {
                 },
                 'about': {
                     'journey': '🔄 My Journey',
-                    'journeyText': 'I am a 12th grade student in Chimoio, Mozambique, with a passion for technology, engineering and innovation. I constantly seek to learn and apply knowledge in practical projects that can positively impact my community.',
+                    'journeyText': 'I am a recent secondary school graduate from Chimoio, Mozambique, with a strong academic background in science and a growing focus on engineering and applied technology. I am particularly interested in using computational tools and technical systems to address real-world challenges in developing communities. Through programming projects, academic excellence, and youth leadership initiatives, I have developed a disciplined and problem-solving mindset aimed at building a solid foundation for a future career in engineering.',
                     'education': '🎓 Academic Education',
                     'school': 'Samora Machel Secondary School',
                     'year': '2024 - 2025', 
@@ -672,7 +672,7 @@ class UnifiedTranslationSystem {
                 },
                 'about': {
                     'journey': '🔄 Mi Viaje',
-                    'journeyText': 'Soy estudiante de 12º grado en Chimoio, Mozambique, con pasión por la tecnología, ingeniería e innovación. Busco constantemente aprender y aplicar conocimientos en proyectos prácticos que puedan impactar positivamente en mi comunidad.',
+                    'journeyText': 'Soy un recién graduado de educación secundaria en Chimoio, Mozambique, con una sólida formación académica en ciencias y un interés creciente en ingeniería y tecnologías aplicadas. Me interesa especialmente utilizar herramientas computacionales y sistemas técnicos para abordar desafíos reales en comunidades en desarrollo. A través de proyectos de programación, excelencia académica e iniciativas de liderazgo juvenil, he desarrollado una mentalidad disciplinada y orientada a la resolución de problemas, con el objetivo de construir una base sólida para una futura carrera en ingeniería.',
                     'education': '🎓 Formación Académica',
                     'school': 'Escuela Secundaria Samora Machel',
                     'year': '2024 - 2025', 
@@ -797,7 +797,7 @@ class UnifiedTranslationSystem {
                 },
                 'about': {
                     'journey': '🔄 Мой Путь',
-                    'journeyText': 'Я ученик 12 класса в Шимоиу, Мозамбик, увлеченный технологиями, инженерией и инновациями. Я постоянно стремлюсь учиться и применять знания в практических проектах, которые могут положительно повлиять на мое сообщество.',
+                    'journeyText': 'Я недавно окончил среднюю школу в Чимоио, Мозамбик, обладаю прочной академической подготовкой в области науки и проявляю растущий интерес к инженерии и прикладным технологиям. Меня особенно интересует использование вычислительных инструментов и технических систем для решения реальных проблем в развивающихся сообществах. Через проекты по программированию, академическое совершенство и инициативы молодежного лидерства я развил дисциплинированное и ориентированное на решение проблем мышление, направленное на создание прочной базы для будущей карьеры в инженерии.',
                     'education': '🎓 Образование',
                     'school': 'Средняя школа Самора Машел',
                     'year': '2024 - 2025', 
@@ -922,7 +922,7 @@ class UnifiedTranslationSystem {
                 },
                 'about': {
                     'journey': '🔄 我的旅程',
-                    'journeyText': '我是莫桑比克希莫尤的一名12年级学生，对技术、工程和创新充满热情。我不断寻求学习并将知识应用于实际项目中，以积极影响我的社区。',
+                    'journeyText': '我是一名来自莫桑比克希莫尤的应届中学毕业生，拥有扎实的科学学术背景，并对工程和应用技术有着日益浓厚的兴趣。我特别关注利用计算工具和技术系统来解决发展中社区的实际问题。通过编程项目、学术卓越以及青年领导力活动，我培养了严谨且以解决问题为导向的思维方式，旨在为未来的工程职业打下坚实的基础。',
                     'education': '🎓 学历',
                     'school': '萨莫拉·马谢尔中学',
                     'year': '2024 - 2025', 
